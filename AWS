@@ -1,0 +1,5075 @@
+negotiation
+https://www.youtube.com/watch?v=CHqKzwgjFKA
+
+
+AWS
+aws is a secure cloud services platform, offering compute power, database storage, content delivery and other functionality to help businesses scale and grow.
+
+virtual machine = EC2 instance, elastic compute instance
+
+Benfit - Easy to use, flexible, cost-effective , reliable, scalable and high performance, secure
+
+AWS CSA - Cloud Security Alliance 
+
+Course content
+Introduction
+Amazon free tier account
+Amazon EC2	= virtual machine
+Amazon Storage	= EBS(elastic block storage), Object level, block level,S3, EFS elastic file system 
+Amazon Networking = VPS, Subnet, Route table, routing, 
+Amazon Managment tools	= monitor
+Amazon IAM = Identy and access managment, we can create different user, and assign access on different VMs
+AWS Directory Service
+
+Introduction to cloud Computing
+What is Cloud Computing?
+Type of cloud Computing?
+AWS Architecture
+AWS Managment Console
+Setting up the AWS Account
+
+Amazon EC2
+How to create virtual machines in AWS
+Amazon Lightsail
+Elastic Beanstalk
+Types of EC2 instances
+Amazon AMIs and snapshots
+Backups and Restore
+Networking and security groups
+Awazon Scaling service : ELB & Autoscaling
+
+Amazon 	Storage
+We will cover different storage services like S3, EBS, EFS
+How to store data in S3 buckets
+How to host a static website in S3
+
+Amazon Networking
+What is VPC? = virtual private cloud
+How to create VPC
+How to make public and private subnets in AWS
+How to define Gateways
+How to define Routes in Route Tables
+Elastic ips = static ip
+VPC Peering = if 2 different account A, B, and we want to connect A EC2 machine with B EC2 machine with VPC Peering
+
+AWS Identity and Access Managment
+How to setup users and groups
+How to restrict access on resources so that only authorized users can access the resource
+How to enable MFA (Multi Factor Authentication)	= gmail login, like msg receive on your mobile, if unknow login place
+
+AWS Services
+Cloud Watch
+SNS (Simple Notification Service)
+SES (Simple Email Service)
+AWS Work mail
+AWS Work docs
+AWS Billing Dashboard
+AWS Import/Export (Snow ball)
+AWS Route53
+AWS Databases
+AWS Regions & Availability Zones
+
+
+Certification roadmap
+
+Role-Based Certifications 		validity 2 years
+Foundational
+Associate		Solutions Architect, Developer, SysOps Administration
+Professional		Solutions Architect, Developer, DevOps Engineer
+
+Architect: Technical knowledge for solutions architects, solution design engineers, and anyone who designs appliations and systems on AWS
+
+Developer : Techincal knowledge for software developers who develop cloud applications on AWS
+
+Operations : Techincal knowledge for SysOps administrators, systems administrators, and those in a DevOps role who create automatable and repeatable deloyments, networks, and systems on the AWS Platform. 
+
+Speciality Certifications - must have 1 role-based certification
+
+Advanced Networking 
+
+Big Data
+
+
+
+..................
+
+What is cloud
+The term cloud refers to a network or internet
+we can say that cloud is something which is present on remote location and is accessiable only through the internet
+
+What is cloud computing
+cloud computing means storing and accessing data and programs over the internet instead of your computer's hardware
+
+we can create, configure and custimize applications online
+
+with cloud computing users can access cloud resources from anywhere in the world, you just need an access to the internet
+
+cloud computing is both a combination of s/w and h/w based computing resource delivered as a network service
+
+Dont need to worry about the maintenance of your resources
+
+Cloud Computing Architecture
+Application
+Platform
+Infrastructure
+
+Models for cloud Computing
+There are some models working behind and making cloud computing feasible and accessible to cloud users
+Deployment Models : you can say that how your cloud is configured.
+	Public : your all resources and instances which you have configured are accessible to public over internet. It is less secure, webmail
+	Private: your all instances are accessiable only to your organization. it is more secure.
+	Hybrid : mixture of private and public
+	Community : your instances are accessiable to some group of organizations.
+
+Service Models :
+Infrastructure as a service(IAAS): is form of cloud computing that provides virtualized computing resources over the internet.
+IAAS provides access to fundamental resources such as physical machines, virtual storages etc.
+Usally billed on usage
+Usually multi tenant virtualized environment - (From different pool, we assigned mutliple RAM, Hard Disk)
+
+platform as a service(PAAS): it provides you computing platforms which typically include operating systems, Database, Web server etc.
+For instance, if you are a PHP developer you dont need to setup the entire system
+
+software as a service(SAAS) : allows to use s/w applications as a service to end users.
+SAAS is a s/w delivery methodology that provides licensed multi tenant access to s/w and its fuctions remotely as a web based service.
+A common example of a SaaS application is web-based email where you can send and receive email without having to manage feature additions to the email product or maintaining the servers and operating systems that the email program is running on.
+e.g. Remote Desktop Services
+
+Advantages
+cost efficient
+Unlimited storage
+Quick Deployment	
+Easy access of your resources
+Scalable and Reliable
+Instant S/w updates
+Device Independence(Mobile, Tab, Laptop)
+Reduce maintenance
+
+Disadvantages 
+Constant Internet connection
+High Speed Internet connection
+security
+stored data can be lost
+
+....................
+
+Free tier account
+offer 12 months free
+https://portal.aws.amazon.com/billing/signup
+
+AWS Free tier services
+Amazon EC2 750 Hours per month
+Amazon EFS 5GB per month
+Amazon RDS 750 Hours per month
+Amazon S3 5GB of Standard Storage
+Amazon ELB 750 Hours per month
+Amazon Directory Service 1 month Free
+1 Elastic IP Free
+https://aws.amazon.com/free
+
+AWS Regions - country wise (and in different country have different availabe Zones)
+Each region is a seprate geographic area. Each region has multiple, isolated locations known as Availability Zones.
+Amazon EC2 is hosted in multiple locations world-wide. These locations are composed of regions and Availability Zones.
+Amazon EC2 provides you the ability to place resources, such as instances, and data in multiple locations.
+
+Regions & Number of Availability Zones
+Us East, Us west
+Asia Pacific, canada, China, Europe
+South America, AWS GovCloud (Us-West)
+
+Best practice, whenever you place resource place on 2 Availality Zone in 1 Region
+
+AWS Global Infrastructure
+53 availablity Zones within 18 geographic regions and 1 local region around world
+
+To find your regions and availability Zones console Open the Amazon EC2 Console
+https://console.aws.amazon.com/ec2/
+
+Show AWS region ping latency
+https://cloudping.info
+
+chech availability zone - region - EC2 Dashboard - Availability Zone
+
+Scopes of different AWS Services
+
+AZ			Regional		Global
+EC2 Instance		S3 Bucket		IAM Entities (Users, Groups,Roles & policies
+EBS Volume		AMI			Route53
+RDS Instance		Snapshot(EBS/RDS)	CloudFront
+Redshift Node		DynamoDB		Distribution
+subnets			VPC
+Elastic File		Elastic IP
+System			SQS, SNS
+			CloudWatch Metrics
+
+Service Limits
+When you create your AWS account, Amazon sets default limits on these resources on a per-region basis.
+Amazon EC2 provides different resources that you can use. These resources use images, instances, volumes and snapshots.
+To-view your current limits, Open the Amazon EC2 console at 
+https://console.aws.amazon.com/ec2/
+
+To-view the AWS service limit open the following link
+https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html
+
+Limits - EC2 Service limits - Instance Limit (On-Demand,Spot requests, Reserved Instance,Dedicated )
+On demand
+
+...........
+EC2
+Amazon Elastic compute cloud is Web service that provides resizable compute capacity in the cloud. Amazon EC2 reduces the time required to obtain and boot new server instances to minutes, allowing you to quickly scale capacity, both up and down, as your computing requirements change.
+
+EC2 options
+
+On Demand - allow you to pay a fixed rate by the hour with no commitment. billing on sec also(linux already applied, windows not applied, 35 min used billing will be 1 hour)
+
+Users that want the low cost and flexibility of Amazon EC2 without any upfront payment or long-term commitment.
+applications with short term, spiky,or unpredictable workloads that cannot be interrupted.
+applications being developed or tested on Amazon EC2 for the first time.
+A new billing cycle starts whenever an instance change to "Running" state.
+
+Reserved (multi tenant)- provide you with a capacity reservation, and offer a significant discount on the hourly charge for an instance. With full upfront, partial upfront and no upfront. 1 year or 3 year term.
+
+Applications with steady state or predictable usage
+You can re-sell on AWS if you choose not to use
+Users able to make upfront payments to reduce their total computing costs even further
+	Standard RI's (Up to 75% off on demand)
+	Convertable RI's (Up to 54 % off on demand) capability to change the attributes of the RI as long as the exchange results in the creation of Reserved Instances of equal or greater values.
+	Scheduled RI's available to launch within the time windows you reserve. This option allows you to match your capacity reservation to a predictable recurring schedule that only requires a fraction of a day, a week, or a month.
+Full upfront will get 75% discount can get.
+
+Spot - enable you to bid whatever price you want for instance capacity, providing for even greater savings if your applications have flexible start and end times.
+
+Applications that have flexible start and end times
+Unused capacity at AWS is given in market for bidding 
+look at pricing history and decide bid price
+instances are terminated with 2 minutes notice when market price goes above bid price
+If terminated by AWS, last partial hour is free
+Optionally, use spot block option with bid to block the instance (maximum 6 hours)
+
+Dedicated - Physical EC2 server dedicated for your use. Dedicated hosts can help you reduce costs by allowing to use your existing server-bound s/w licenses.
+
+Useful for regulatory requirments that may not support multi-tenant virtualization.
+great for licensing which doesn't support multi-tenancy or cloud deployment.
+can be purchased on-demand(Hourly).
+can be purchased as a Reservation for up to 70% off the on-demand price.
+pay for full physical host, irrespective of number of instances running 
+suitable when you want to use hardware-bound license
+
+
+EC2 Instance type
+
+Family	Speciality 			Use Case
+D2	Dense Storage			Fileservers/Data Warehousing/Hadoop
+R4	Memory Optimized		Memory Intensive Apps/DBs
+M4	General Purpose			Application Servers
+C4	Compute Optimized		CPU Intensive Apps/DBs
+G2	Graphics Intensive		Video Encoding/ 3D Application Streaming 
+I2	High Speed Storage		NOSQL DBs, Data Warehousing etc
+F1	Field Programmable Gate Array	Hardware acceleration for your code
+T2	Lowest Cost, General Purpose	Web Servers/Small DBs
+P2	Graphics/General Purpose GPU	Machine Learning, Bit Coin Mining etc
+X1	Memory Optimized		SAP HANA/Apache Spark etc 
+
+................
+
+what is EBS? - block level storage, 		S3 - object level storage
+EBS is block level storage.
+Amazon EBS allows you to create storage volumes and attach them to Amazon EC2 instances.
+Once attached, you can create a file system on top of these volumes, run a database, or use them in any other way you would use a block device.
+Amazon EBS volumes are placed in a specific Availability Zones, where they are automatically relicated to protect you from the failure of a single component.
+Elastic Volumes is a feature of amazon EBS that allows you to dynamically increase capacity.
+
+EBS Volume Types
+General purpose SSD (gp2)
+Provisioned IOPS SSD (io1)
+Throughput Optimized HDD (st1)
+Cold HDD (sc1)
+Magnetic Standard
+
+EBS Volume Categories
+Amazon EBS provides a range of options that allow you to optimize storage performance and cost for your workload. These options are divided into two major categories:
+
+SSD-backed Volumes (IOPS-intensive) - we can boot from that  - 2 types - (gp2),(io1)
+SSD-backed storage for transactional workloads, such as databases and boot volumes (performance depends primarily on IOPS)
+
+HDD-backed Volumes (MB/s-intensive) - we cant boot from that - 3 types - (st1),(sc1), Magnetic Standard(we can boot on magnetic) 
+HDD-backed storage for throughput intensive workloads, such as Map Reduce and log processing (performance depends primarily MB/s).
+
+gp2 - upto 10000 IOPS
+gp2 is default EBS volume type for the Amazon EC2 instances.
+gp2 Volumes are backed by solid-state drives(SSDs)
+General purpose, balances both price and performance.
+Ratio of 3 IOPS per GB with up to 10,000 IOPS
+Boot volume, low latency interactive apps, Dev and test
+Volume size : 1 GB-16 TB
+Max IOPS/Volume: 10,000
+Price: $0.10/GB-month
+
+Provisioned IOPS SSD (io1) - upto 32000 IOPS - both IOPS-intensive and throughput-intensive
+These volumes are ideal for both IOPS-intensive and throughput-intensive workloads that require extremely low latency.
+Designed for I/O intensive applications such as large relational or NoSQL databases.
+Use if you need more than 10000 IOPS.
+Can provision up to 32000 IOPS per volume
+Volume size: 4GB - 16 TB
+Price: $0.125/GB-month 
+
+Throughput Optimized HDD(st1) - Throughput intensive - 
+st1 is backed by hard disk drives (HDDS) and is ideal for frequently accessed, throughput intensive workloads with large datasets
+st1 volumes deliver performance in term of throughput, measured in MB/s
+Big data
+Data warehouses
+Log processing
+Cannot be a boot volume
+Can provision up to 500 IOPS per volume
+Volume size : 500 GB - 16 TB
+Price : $ 0.045/GB-month
+
+Cold HDD(sc1)
+sc1 is also backed by hard disk drives (HDDs) and provides the lowest cost per GB of all EBS volume types
+Lowest cost storage for infrequent accessed workloads
+file server
+cannot be a boot volume
+volume size : 500 GB - 16TB
+Price : $0.025/GB-month
+
+Megnetic (Standard)
+Lowest cost per gigabyte of all EBS volume types that is bootable.
+Magnetic volumes are ideal for workloads where data is accessed infrequently, and applications where the lowest storage cost is important.
+
+Useful links:
+https://aws.amzon.com/ebs/details/
+https://doc.aws.amzon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html
+
+.........
+
+Launch EC2 instance
+Choose AMI - Choose Instance type - Configure Instance - Add Storage -  Add Tags - Configure Security Group - Review
+My AMI - after setup one AMI and all enviorment and configuration you can save as AMI
+AWS Marketplace - find and run s/w in AWS Cloud
+Community AMIs
+Operating system
+
+Security Group
+A security group acts as a virtual firewall that controls the traffic for one or more instances.
+When you launch an instance, you associate one or more security groups with the instance.
+You can add rules to each security group that allow traffic to or from its associated instances.
+You can modify the rules for a security group at any time, the new rules are automatically applied to all instances that are associated with the security group
+
+EC2 Volumes
+Choose another region and check either your EC2 instance is accessiable or not
+How to increase Volume Size
+How to attache volume to existing EC2 instance
+How to detach volume
+If you increased size of any drive you cant decrease it further, 
+if you increased size of any drive you cant increase it further for next 6 hours
+Your EC2 volume must be in same availability zone, in which you have your EC2 instance
+
+
+...........................
+Backup & restore EC2 instance
+How to backup & restore EC2 instance
+Backups are saved in form of AMI's
+Backup AMI's can be copied from one region to another region
+
+
+EBS Snapshots
+A point-in-time snapshot of an EBS volume, can be used as a baseline for new volumes or for data backup.
+If you make periodic snapshots of a volume, the snapshots are incremental only the blocks on the device that have changed after your last snapshot are saved in the new snapshot.
+Even through snapshots are saved incrementally, the snapshot deletion process is designed so that you need to retain only the most recent snapshot in order to restore the entire volume.
+snapshots occur asynchronously; the point-in-time snapshot is created immediately, but the status of the snapshot is pending until the snapshot is complete (when all of modified blocks have been transferred to Amazon S3), which can several hours for large initial snapshots or subsequent snapshots where many blocks have changed.
+
+Although you can take snapshot of a volume while a previous snapshot of that volume is in the pending status, having multiple pending snapshots of a  volume may result in reduced volume performance until the snapshots complete.
+There is a limit of five pending snapshots for a single gp2, io1, or Magnetic volume, and one pending snapshot for a single st1 or sc1 volume.
+If you receive a Concurrent Snapshot Limit Exceeded error while trying to create multiple concurrent snapshot of the same volume, wait for one or more of the pending snapshots to complete before creating another snapshot of that volume.
+Snapshots that are taken from encrypted volumes are automatically encrypted, Volumes that are created encrypted snapshots are also automattically encrypted.
+
+.................
+EC2 Instance Linux
+You need putty and puttygen to access your linux servers
+For Amazon linux, the user name is ec2
+For Centos, the user name is centos.
+For Debian, the user name is admin or root.
+For Fedora, the user name is ec2-user.
+For RHEL, the user name is ec2-user or root.
+For SUSE, the user name is ec2-user or root.
+For Ubuntu, the user name is ubuntu or root.
+
+
+Elastic IP address
+An Elastic IP address is a public IPv4 address, which is reachable from the internet. If your instance does not have a public IPv4 address, you can associate an Elastic IP address with your instance to enable communication with the internet; for example, to connect to your instance from your local computer.
+
+AWS currently do not support Elastic IP addresses for IPv6.
+To use an Elastic IP address, you first allocate one to your account, and then associate it with your instance or a network interface.
+When you associate an Elastic IP address with an instance or its primary network interface, the instance's public IPv4 address (if it had one) is released back into Amazon's pool of public IPv4 address. You cannot refuse a public IPv4 address.
+
+Elasic IP address
+You can disassociate an Elastic IP address from a resource, and reasssociate it with a different resource.
+A disassociated Elastic IP address remains allocated to your account until you explicitly release it.
+To ensure efficient use of Elastic IP address, we impose a small hourly charge if an Elastic IP address is not associated with a running instance, or if it Elastic IP addresss is not associated with a stopped instance or an unattached network interface. while your instance is running, you are not charged for one Elastic for any additional Elastic IP addresses associated with the instance.
+
+AN Elastic IP address is for use in a specific region only.
+When you associate an Elastic IP address with an instance that previously had a IPv4 address, the public DNS hostname of the instance changes to match the Elastic IP address.
+
+........
+VPC 
+
+A vpc is virtual private cloud is a virtual network that closely resembles a traditional network that you operate in your own data center, with the benifits of using the scalable infrastucture of Amazon Web Services (AWS).
+A virtual private cloud is a virtual network dedicated to your AWS account.
+It is logically isolated from other virtual networks in the AWS cloud.
+You can launch your AWS resources, such as Amazon EC2 instances, into your VPC.
+You can configure your VPC by modifying its IP address range, create subnets, and configure route tables, network getways, and security settings.
+
+When you create a VPC, you must specify a range of IPv4 addresses, for the VPC in the form of a Classless InterDomain Routing (CIDR) block; for example, 10.0.0.0/16. This is the primary CIDR block for your VPC.
+
+VPC CONFIGURATION
+There are four types of VPC Configuration.
+VPC with a Single Public Subnet
+VPC with Public and Private Subnets
+VPC with Public and Private Subnets and Hardware VPN Access
+VPC with a Private Subnet Only and Hardware VPN Access
+
+VPC with a Single public subnet
+Your instances run in a private, isolated section of the AWS cloud with direct access to the Internet. Network access control lists and security groups can be used to provide strict control over inbound and outbound network traffic to your instances.
+
+Creates:
+A /16 network with a /24 subnet. Public subnet instances use Elastic IPs or Public IPs to access the Internet   
+
+VPC with Public and private Subnets
+In addition to containing a public subnets, this configuration adds a private subnets whose instances are not addressable from the internet. Instances in the private subnets can establish outbound connections to the Internet via the public subnet using Network Address Translation (NAT).
+
+Creates:
+A/16 network with two /24 subnets. Public subnets instances use Elastic IPs to access the Internet. Private subnets instances access the Internet via Network Address Translation (NAT). (Hourly charge for NAT devices apply.)
+
+VPC with Public and Private Subnets and Hardware VPN Access 
+This configuration adds an IPSec Virtual Private Network (VPN) connection between your Amazon VPC and your data center - effectively extending your data center to the cloud while also providing direct access to the Internet for public subnet instances in your Amazon VPC.
+
+Creates:
+A/16 network with two /24 subnets.
+One subnet is directly connected to the Internet while the other subnet is connected to your corporate network via IPSec VPN tunnel.(VPN charge apply.)
+
+VPC with a Private Subnets only and Hardware VPN Access
+Your instances run in a private, isolated section of the AWS cloud with a private subnet whose instances are not addressable from the Internet. You can connect this private subnets to your corporate data center via an IPsec Virtual Private Network(VPN) tunnel.
+
+Creates:
+A/16 network with a /24 subnet and provisions an IPsec VPN tunnel between your Amazon VPC and your corporate network. (VPN charges apply).
+
+VPC
+Subnets
+Route Tables
+Internet Gateways
+DHCP Option sets
+Elatic IPs
+Endpoints
+NAT Gateways
+Peering Connections
+Virtual Private Gateways
+Customer Gateways
+
+Subnets 
+A subnet is a range of IP address in your VPC. You can lanuch AWS resources into a specified subnet. Use a public subnet for resources that must be connected to the internet, and a private subnet for resources that won't be connected to the internet.
+
+Public Subnet: If a subnet's traffic is routed to an internet to an internet gateway, the subnet is known as a public subset. If you want your instance in a public subset to communicate with the internet over IPv4, it must have a public IPv4 address or an Elastic IP address(IPv4).
+
+Private Subnet: If a subnet doesn't have a route to the internet gateway, the subnet is known as a private subnet.
+
+When you create a VPC, you must specify an IPV4 CIDR block for the VPC, The allowed block size is between a/16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses).
+
+The first four IP addresses and the IP addresses and last IP address in each subnet CIDR block are not available for you to use, and cannot be assigned to an instance. For example, in a subnet with CIDR block 10.0.0.0/24, the following five IP addresses are reserved:
+
+10.0.0.0: Network address.
+10.0.0.1: Reserved by AWS for the VPC router.
+10.0.0.2: Reserved by AWS. The IP address of the DNS server
+10.0.0.3: Reserved by AWS for future use.
+10.0.0.255: Network broadcast address, AWS do not support broadcast in a VPC, therefore AWS reserve this address.
+
+Route Table
+A route table contains a set of rules, called routes, that are used to determine where network traffic is directed.
+Each subnet in your VPC must be associated with a route table.
+The table controls the routing for the subnets.
+A subnet can only be associated with one route table at a time.	but you can associated multiple subnets with the same route table.
+Your can create additional custom route tables for your VPC.
+Each subnets must be associated with a route table, which controls the routing for the subnets. If you don't explicitly associated a subnet with a particular route table, the subnet is implicitly associated with the main route table.
+
+Route Table
+You cannot delete the main route table, but you can replace the main route table with a custom table that you've created(so that this table is the default table each new subnet is associated with).
+
+Internet Gateways
+An internet gateways is a virtual router that connects a VPC to the internet.
+Default VPC is already attached with an Internet gateway.
+If you create a new VPC then you must attach the Internet gateway in order to access the internet.
+Ensure that subnet's route table points to the Internet gateway
+
+
+...............
+Important point to discuss
+Billing Dashboard
+Receive Free Tier Usage Alerts
+Just terminate everything from your Region after getting practiced
+Make sure the selection of your Region in which you working
+Amazon VPC Pricing (https://aws.amazon.com/vpc/pricing)
+
+NAT GATEWAYS
+You can use a network address translation (NAT) gateway to enable instances in a private subnet to connect to the internet or other AWS services, but prevant the internet from initiating a connection with those instances.
+If you want EC2 instances in a private subnet of a virtual private cloud(VPC) to communicate securely over the Internet for things like s/w updates and package downloads.
+You are charged for creating and using a NAT gateway in your account, NAT gateway hourly usage and data processing rates apply. Amazon EC2 charges for data transfer also apply.
+To create a NAT gateway, you must specify the public subnet in which the NAT gateway should reside.
+You must also specify an Elastic IP address to associate with the NAT gateway when you create it.
+No need to assign public IP address IP address to your private instance.
+
+After you've created NAT gateway, you must update the route table associated with one or more of your private subnets to point Internet-bound traffic to the NAT gateway. This enables instances in your private subnets to communicate with the internet.
+You have a limit on the number of NAT gateways you can create in an Availablity Zone.
+If you no longer need a NAT gateway, you can delete it. Deleting a NAT gateway disassociates its Elastic IP address, but does not release the address from your account.
+http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html
+
+Architecture of a VPC with NAT Gateway
+
+Testing Gateway	
+You can ping website from a private Instance
+You can tracert route to internet
+You can check instance is accessiable from outside or not
+
+Reminder:
+Have to show total subnets Ips
+Have to change instance password and then relogin via new password   
+
+...............................................
+
+VPC peering
+(Amazon VPC) enables you to launch Amazon Web services (AWS) resources into a virtual network that your've defined.
+A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them using private IPv4 addresses or IPv6 addresses.
+Instances in either VPC can communicate with each other as if they are within the same network.
+You can create a VPC peering connection between your own VPCs, or with a VPC in another AWS account. The VPCs can be in different regions (also known as an inter-region VPC peering connection).
+
+A VPC peering connection help you to facilitate the transfer of data.
+For example, if you have more than one AWS account, you can peer the VPCs those accounts to create a file sharing network.
+You can also use a VPC peering connection to allow other VPCs to access resources you have in one of your VPCs.
+
+VPC Peering Basics
+The owner of the requster VPC sends a request to the owner of the accepter VPC to create the VPC peering connection. The accepter VPC can be owned by you, or another AWS account, and cannot have a CIDR block that overlaps with the requester VPC's CIDR block.
+To enable the flow of traffic between the VPCs using private IP addresses, the owner of each VPC in the VPC peering connection must manually add a more of their VPC route tables that points to the IP address range of the other VPC (the Peer VPC).
+
+If required, Update the security group rules that are associated with your instance to ensure that traffic to and from the peer VPC is not restricted.
+
+Multiple VPC Peering Connections
+A VPC peering connections helps you to facilitate the transfer of data.
+For example, if you have more than one AWS account, you can peer the VPCs across those accounts to create a file sharing network.
+You can also use a VPC peering connection to allow other VPCs to access resources you have in one of your VPCs.
+
+Invalid VPC Peering Connection Configurations
+Overlapping CIDR Blocks
+Transitive Peering
+Edge to Edge Routing Through an Internet Gateway
+Edge to Edge Routing Through Private Connection
+
+.............................
+Network ACLs
+A network access control list (ACL) is an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets.
+Your VPC automattically comes with a modifiable default network ACL. By default, it allow all inbound and outbound IPv4 traffic and, if applicable, IPv6 traffic.
+You can create a custom network ACL and associate it with a subnet. By default, each custom network ACL denies all inbound and outbound traffic until you add rules.
+Each subnet in your VPC must be associated with a network ACL. If you don't explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL.
+
+You can associate a network ACL with multiple subnets; however, a subnet can be associated with only one network ACL at a time. When you associate a network ACL with a subnet, the previous association is removed.
+A network ACL contains a numbered list of rules that we evaluate in order, starting with the lowest numbered rule, to determine whether ACL. The highest number that you can use for rule is 32766. We recommend that you start by creating rules with rule numbers that are multiples of 100, so that you can insert new rules where you need to later on.
+A network ACL has separate inbound and outbound rules, and each rule can either allow or deny traffic.
+Network ACLs are stateless; responses to allowed inbound traffic are subject to the rules for outbound traffic (and vice versa).
+
+..................
+VPN Connections
+
+AWS Managed VPN Connections
+By default, instances that you launch into an Amazon VPN can't communicate with your own(remote) network.
+You can enable access to your remote network from your VPC by attaching a virtual private gateway to the VPC, creating a custom route table, updating your security group rules, and creating an AWS managed VPN connections.
+
+AWS supports Internet Protocol security (IPsec) VPN connections.
+
+Pricing:
+https://aws.amazon.com/vpn/pricing
+
+Components of VPN
+Virtual Private Gateway:
+A virtual private gateway is the VPN concentrator on the Amazon side of the VPN connection. You create a virtual private gateway and attach it to the VPC from which you want to create the VPN connection.
+
+Customer Gateway:
+A customer gateway is a physical device or software application on your side of the VPN connection.
+To create a VPN connection, you must create a customer gateway resource in AWS, which provides information to AWS about your customer gateway device.
+
+......................................
+
+Elastic Load Balancer
+
+Elastic load balancing supports three types of load balancers:
+Application load balancer
+Network Load balancer
+Classic Load balancer
+
+Network Load Balancer
+Load Balancer distributes the web traffic to the available server.
+A load balancer serves as the single point of contact for clients.
+The load balancer distributes incoming traffic across multiple targets, such as Amazon EC2 instances.
+This increases the availablity of your application.
+You can add one or more listeners to your Load balancer.
+A listener checks for connection requests from clients, using the protocol and port you configure and forward requests to a target group.
+Each target group routes requests to one or more registered targets, such as EC2 instances using the TCP protocol and port number you specify.
+Best practice is to place your servers in different Availablity zones
+
+Network Load Balancer
+A network load balancer functions at the fourth layer of the Open System Interconnection(OSI) model. It can handle millions of requests per second. After the load balancer receives a connection request, it selects a target from the target group for the default rule. It attemps to open a TCP connection to the selected target on the port specified in the listener configuration.
+
+Pricing : https://aws.amazon.com/elasticloadbalancing/pricing/
+
+Open port 80 in ACL or security group
+
+..................................................
+
+Auto Scaling 
+AWS auto scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost.
+You can use auto scaling to manage Amazon EC2 capacity automatically, maintain the right number of instances for your application, operate a healthy group of instances, and scale it according to your needs.
+
+.................................
+S3 (Simple Storage Service)
+
+S3 provides Developer and IT team with secure, durable, highly-scalable object service.
+Amazon S3 is easy to use, with a simple web service interface to store and retrieve any amount of data from anywhere on the web.
+S3 is a safe place to store your files.
+It is object based storage (Allows you to upload files)
+Data is automatically distributed across a minimum of three physical facilities that are geographically separated within an AWS Region, and Amazon S3 can also automatically replicate data to any other AWS Region.
+
+S3
+Files can be from 0 bytes to 5 TB.
+There is an unlimited storage.
+Files are storage in buckets.
+You can't install an operating system on S3.
+S3 is a universal namespace, that is, names be unique globally.
+https://s3.us-east-2.amazonaws.com/MyBucketName 
+https://aws.amazon.com/s3/faqs
+
+Data consistency Model for S3
+Read after write consistency for overwrite PUTS and DELETES (can take sometimes to propagate)
+
+S3 is a simple key, value store
+S3 is object. Objects consist of the following.
+Key (This is simple the name of the object)
+Value (This is simply the data and is made up of sequence of bytes)
+Version ID (Important for versioning)
+Metadata (the data about you are storing)
+Access control lists(Object level, bucket level)  
+
+S3 
+Build for 99.99% availability for the S3 platform.
+Amazon Guarantee 99.9% availibility.
+Amazon guarantee 99.9% durability for S3 information.
+(Remember 11 x 9's) 
+Tiered storage available
+Lifecycle Management
+Versioning 
+Encryption
+Secure your data using Access Control Lists and Bucket Policies
+
+S3 Storage Tiers
+S3 - Standard
+S3 - IA (Infrequently Accessed)	For data that is accessed less frequently, but requires access when needed. Lower fee than S3, but you are charged a retrieval fee.
+Reduced Redundancy Storage - Designed to provide 99.99% durability and 99.99% availability of objects over a given year.
+Glacier - Very cheap, but used for archival only. It takes 3 - 5 hours to restore from Glacier.
+
+Glacier 
+Glacier is an extremely low-cost storage service for data archival. Amazon Glacier stores data for as little as $0.01 per gigabyte per month and is optimized for data that is infrequently accessed and for which retrieval times of 3 - 5 hours are suitable.
+
+S3 Charges
+Charged for
+Storage
+Requests
+Storage Management pricing (Tagging)
+Data transfer pricing
+Moving data into S3 is free
+https://aws.amazon.com/s3/pricing/
+Have to show you s3 Requests and puts in billing 
+
+S3
+Buckets are a universal namespace
+S3,S3 - IA,S3 Reduced Redundancy Storage
+Encryption
+Client side Encryption
+Server side Encryption
+Server side Encryption with Amazon S3 managed Keys (SSE-S3)
+Server side Encryption with KMS (SSE-KMS)
+Server side encryption with customer provided keys (SSE-C)
+Control access to buckets using either a bucket ACL or using bucket policies 
+By default, Buckets are Private and all objects stored inside them are private
+
+
+S3 Versioning
+Versioning is a means of keeping multiple variants of an object in the same buckets.
+You can use versioning to preserver, retrieve and restore every version of every object in your Amazon S3 Bucket.
+Stores all versions of an object(including all writes and even if you delete an object)
+Great backup tool
+Once enabled, versioning can't be disabled, only suspended.
+Integrates with Lifecycle rules
+Versioning's MFA Delete capability, which uses multi-factor authentication, can be used to provide an extra layer of security
+
+.......................................
+
+Snowballs
+Import/Export disk
+AWS import/export disk accelerates moving large amounts of data into and out of AWS cloud using portable storage devices for transport.
+AWS Import/export disk transfers your data directly onto and off of Storage devices using Amazon's high-speed internal network and bypassing the internet.
+Difficult for AWS to manage
+
+Snowball
+AWS Snowball is a service that accelerates transfering larger amounts of data into and out of AWS physical storage appliances, bypassing the internet.
+
+Type of Snowball
+Snowball 
+Snowball Edge
+Snowmobile
+
+Pricing : https://aws.amazon.com/snowball/pricing
+
+Snowball
+Snowball cam import to S3 or export from S3
+Snowball is petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of AWS.
+Using snowball addresses common challenges with large-scale data transfers including high speed network costs, long transfer times and security concerns.
+Transferring data with snowball is easy, simple, fast, secure and can be as little as one-fifth the cost of high-speed internet
+Snowball uses multiple layers of security designed to protect your data including tamper-resistant enclosures, 256-bit encryption and an industry standard trusted platform Module (TPM) designed to ensure both security and full chain-of-custody of your data.
+Once the data transferred job has been processed and verified, AWS performs a s/w erasure of the snowball appliance.
+Snowball to S3 and then to Glacier
+
+Snowball Edge
+AWS Snowball Edge is a 100TB data transfer device with on-board storage and compute capabilites.
+You can use snowball edge to move large local datasets, or to support local workloads in remote or offline locations.
+Snowball Edge connects to your existing applications and infrastructure using standard storage interfaces, streamlining the data transfer process and minimizing setup and integration.
+Snowball Edge can cluster together to form a local storage tier and process your data on-premises, helping ensure your applications continue to run even when they are not able to access the cloud.
+
+Snowmobile
+AWS Snowmobile is an Exabytes-scales data transfer service used to move extremely large amounts of data to AWS.
+You can transfer up to 100PB per snowmobile, a 45 foot long shipping container, pulled by a semi-trailer truck.
+Snowmobile makes it easy to move massive volumes of data to the cloud, including video libraries, image repositories or a complete datacenter migration.
+Transferring data with snowmobile is secure, fast and cost effective.
+
+.....................
+
+S3- Cross Region Replication
+
+Cross Region Replication
+Versioning must be enabled on both the source and destination buckets.
+Files in an existing bucket are not replicated automatically. All subsequent replicate to multiple buckets or use daisy chaining (at this time).
+Delete markets are replicated.
+Deleting individual versions or delete markets will not be replicated.
+
+* Objects might still be publicly accessible due to object ACLs
+
+Cross Region Replication
+You can copy data from 1 bucket to another via AWS CLI
+aws s3 cp-recursive s3://sourcebucket s3://destination bucket
+
+...............................................
+
+S3 Lifecycle Management
+Can be used in conjunction with versioning.
+Can be applied to current versions and previous versions
+Following actions can now be done.
+Transition to the standard - Infrequent Access Storage Class (128 KB and days after the creation date)
+Archive to the glacier Storage Class (30 days after IA)
+
+CloudFront
+Amazon CloudFront is a web service that speeds up distribution of your static and dynamic web content, for example, .html, .css, .php, image, and media
+files, to end users.
+CloudFront delivers your content through a worldwide network of edge locations.
+When an end user requests content that you're serving with CloudFront, the user is routed to the edge location that provides the lowest latency, so content is delivered with the best possible performance.
+If the content is already in that edge location, cloudFront delivers it immediately. if the content is not currently in that edge location, CloudFront retrieves it from an Amazon S3 bucket or an HTTP server (for example, a web server) that you have identified as the source for the definitive version of your content.
+
+What is a CDN
+A Content Delivery Network(cdn) is a system of distributed servers(Network) that deliver webpages and other web content to a user based on the geographical locations of the user, the origion of the webpage and a content delivery server.
+
+CloudFront - Key Terminology 
+
+Edge Location - This is the location where the content will be cached. This is separate to AWS Region/Availability Zone. There are total 50 Edge locations now.
+
+Origin - This is the origin of all the files that the CDN will distribute, This can be either S3 bucket, EC2 instance, an Elastic Load Balancer or Route53,
+
+Distribution - This is the name given the CDN which consists of collection of Edge Locations.
+
+CloudFront
+Amazon CloudFront can be used to deliver your entire website, including dynamic, static, streaming and interactive content using a global network of edge locations.
+Requests for your content are automatically routed to the nearest edge locations, so the content is delivered with the best possible performance.
+
+Delivery Methods for content
+Web
+speed up distribution of static and dynamic content
+Distribute media files using HTTP or HTTPS.
+Add, update, or delete objects, and submit data from web forms.
+You store your files in an origion - either an Amazon S3 bucket or a web server. After you create the distribution, you can add more origins to the distribution.
+
+RTMP
+Create an RTMP distribution to speed up distribution of your streaming media files using Adobe Flash Media Server's RTMP protocol. An RTMP distribution allows an end user to begin playing a media file before the file has finished downloading from a CloudFront edge location.
+
+CloudFront
+Edge locations are not just read-only, you can write to them too. ( i:e put an object to them as well)
+Objects are cached for the life of TTL (Time to Live)
+
+AWS Free Usage Tier
+As part of the AWS Free Usage Tier, you can get started with Amazon CloudFront for free. Upon sign-up, new AWS customers receive 50GB Data Transfer Out Transfer Out and 2,000,000 HTTP and HTTPS Requests each month for one year.
+
+Pricing: https://aws.amazon.com/cloudfront/pricing/
+
+Edge Locations: https://aws.amazon.com/cloudfront/details/
+
+.....................
+Storage Gateway
+
+AWS Storage Gateway is a service that connects an on-premises s/w appliance with cloud-based to provide seamless and secure integration between an organization's on-premises IT environment and AWS's Storage infrastructure. The service enables you to securely store data to the AWS cloud for scalable and cost-effective storage.
+
+AWS Storage Gateway's s/w appliance is available for download as a virtual machine (VM) image that you install on a host in your datacenter.
+
+Storage gateway supports either VMware ESXi or Microsoft Hyper-V. Once you have installed your gateway assoicated with your AWS account through the activation process, you can use the AWS management console to create the storage gateway option that is right for you.
+
+Types of Storage Gateway
+File Gateway (NFS)
+Volumes Gateway (iSCSI)
+- Stored Volumes
+- Cached Volumes
+Taped Gateway (VTL)
+
+File Gateway 
+Files are stored as object in S3 Buckets, accessed through a Network File System (NFS) mount point. Ownership, permissions and timestamps are durably stored in S3 in the user-metadata of the object associated with the file. Once objects are transferred to S3 they can be managed as native S3 objects, and bucket policies such as versioning, lifecycle management and cross region replication apply directly to objects stored in bucket.
+
+Volume Gateway
+A volume gateway provides cloud-backed storage volumes that you can mount as Internet Small Computer System Interface (iSCSI) devices from your on-premises application servers. The gateway supports the following volume configurations:
+
+Cached volumes - You store your data in Amazon Simple Storage Service (Amazon S3) and retain a copy of frequently accessed data subsets locally. Cached volumes offer a substantial cost savings on primary storage and minimize the need to scale your storage on-premises. You also retain lowlatency access to your frequently accessed data.
+
+Stored volumes - If you need low-latency access to your entire dataset, first configure your on-premises gateway to store all your data locally. Then asynchronously back up point-in-time snapshots of this data to Amazon S3. This configuration provides durable and inexpensive offsite backups that you can recover to your local center or Amazon EC2. For example, if you need replacement capacity for disaster recovery, you can recover the backups to Amazon EC2.
+
+Tape Gateways
+With a type gateway, you can cost-effectively and durably archive backup data in Amazon Glacier. A tape gateway provides a virtual tape infrastructure that scales seamlessly with your business needs and eliminates the operational burden of provisioning, scaling, and maintaining a physical tape infrastructure.
+You can run AWS Storage Gateway either on-premises as a VM appliance, or in AWS as an Amazon Elastic Compute Cloud (Amazon EC2) Instance. You deploy your Gateways hosted on EC2 instances can be used for disaster recovery, data mirroring, and providing storage for applications hosted on Amazon EC2.
+
+Summary 
+
+File Gateway - For flat files, stored directly on S3.
+Tape Gateway - Used for backup and uses popular backup applications like NetBackup, Backup Exec, Veeam etc.
+Volume Gateway:
+- Stored Volumes - Entire Dataset is stored on site and is asynchronously backed up to S3.
+- Cached Volumes - Entire Dataset is stored on S3 and the most frequently accessed data is cached on site.
+
+
+..................
+IAM - Identity & Access Management
+
+AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. You use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources.
+When you first create an AWS account, you begin with a single sign-in identity that has complete access to all AWS services and resources in the account. This identity is called that AWS account root user and is accessed by signing in with the email address and password that you used to create the account.
+AWS strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones.
+
+
+......................................
+
+CloudWatch 
+Amazon CloudWatch provides a reliable, scalable, and flexible monitoring solution that you can start using within minutes. You no longer need to set up, manage, and scale your own monitoring systems and infrastructure. 
+
+Use CloudWatch to monitor your AWS resources and the applications you run on AWS in real time.
+
+Use CloudWatch Events to send system events from AWS resources to AWS Lambda functions, Amazon SNS topics, stream in Amazon Kinesis, and other target types.
+
+Use CloudWatch Logs to monitors, store, and access your log files from Amazon EC2 instances, AWS CloudTrail, or other sources.
+
+Feature & Benfits
+Monitor Amazon EC2
+Monitor Other AWS Resources
+Monitor Custom Metrics
+Monitor and store Logs
+Set Alarms
+View Graphs and Statistis
+
+
+What we can do with CloudWatch 
+Dashboards - Create awesome dashboards to see what is happening with your AWS environment.
+Alarms - Allows you to set Alarms that notify you when particular thresholds are hit.
+Events - CloudWatch Events helps you to respond to state changes in your AWS resources.
+Logs - CloudWatch Logs helps you to aggregate, monitor and store logs.
+Billing Alarms - You can also setup billing alerts if required.
+CloudWatch service is Region wise.
+
+
+..........................
+
+Route53
+What is DNS
+If you have used the internet, you have used the DNS. DNS is used to convert human friendly domain names (such as example.com) into an IP Address (such as 10.20.30.40)
+DNS resolves name into IP Address.
+IP Addresses are used by computers to identify each other on Network.
+
+Top Level Domains
+If we look at common domain names such as amazon.com, google.com, microsoft.com etc. you will notice a string of characters seperated by dots (Periods). The last word in a domain name represents the "top level domain". The second word in a domain name is known as second level domain name (this is optional though it depends on the domain name). .com .edu .pk .gov .gov.uk
+
+
+..........................
+
+Simple Notification Service
+Amazon Simple Notification Service (SNS) is a web service that makes it easy to set up, operate and send notifications from the cloud. It provides  developers with a highly scalable, flexible and cost-effective capability to push messages from an application and immediately deliver them to subscribers or other applications.
+
+SNS allows you to group multiple recipients using topics, A topic is an 'access point' for allowing recipients to dynamically subscribe for identical copies of the same notification.
+
+One topic can support deliveries to multiple endpoint types.
+
+When you publish once to a topic, SNS deliveries appropriately formatted copies of your message to each subscriber.
+
+................................
+
+video (VPN+Connections+ +Virtual+Private+Gateway +Customer+Gateway)
+
+main VPC
+
+VPC subnet public - AZ - a
+VPC Subnet private - AZ - b
+
+assume subnet other thing already created
+Virtual Private Gateway 	
+
+Vpn Private gateway
+Customer Gateway
+VPN connection
+
+................................
+video 22 (Network+Load+Balancer)
+
+create 2 linux instance (target)
+set up webpage on both instance
+
+     ssh -i "UITARDPKey.pem" ec2-user@ec2-65-0-18-153.ap-south-1.compute.amazonaws.com  machine A
+
+/var/www/html/mytecmint.com/index.html
+
+
+..................................
+
+Big VPC
+
+VPC subnet public - AZ - a
+VPC Subnet private - AZ - b
+
+assume subnet other thing already created
+Virtual Private Gateway 	
+
+Vpn connection
+Customer Gateway
+
+
+
+https://techgeeknewslive.blogspot.com/2016/04/lifi-what-is-lifi-lifi-means-led-light.html
+
+
+support@nonstopstep.awsapps.com
+manjeet@nonstopstep.awsapps.com
+rohit@nonstopstep.awsapps.com
+
+...................................
+create 1 instance, create RDS mysql, login in instance, download, rds client, and access RDS
+
+
+
+EFS - elastic file system
+
+
+.................................................
+S3 event trigger
+
+import boto3
+from uuid import uuid4
+def lambda_handler(event, context):
+	s3 = boto3.client("s3")
+	dynamodb = boto3.resource('dynamodb')
+	for record in event['Records']:
+		bucket_name = record['s3']['bucket']['name']
+		object_key = record['s3']['object']['key']
+		size = record['s3']['object'].get('size',-1)
+		event_time = record ['eventName']
+		dynamoTable = dynamodb.Table('uita-table')
+		dynamoTable.put_item(
+			Item={'RequestId': str(uuid4()), 'Bucket': bucket_name, 'Object':object_key,'Size':size, 'Event': event_name, 'EventTime':event_time})
+
+
+cron job
+
+import boto3
+ec2 = boto3.resource('ec2')
+def lambda_handler(event, context);
+	filter = [
+		{
+			'Name': 'tag:Type',
+			'Values':['Scheduled']
+			
+		}
+		]
+	instances = ec2.instances.filter(Filters=filter)
+	for instance in instances:
+		instance.start()
+	return 'Check your EC2 instance status'
+
+
+......................................
+
+Cloud formation
+
+EC2 instance
+
+{
+  "Resources": {
+    "MyEc2Instance": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "ImageId": "ami-089c6f2e3866f0f14"
+      }
+    }
+  }
+}
+
+
+S3 resource
+
+{
+ "Resources": {
+    "BucketName": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketName": "uitabucketid3847"
+      }
+    }
+  }
+}
+
+VPC
+
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "MyVPC1": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/16"
+      },
+      "MyPrivateSubnet": {
+        "Type": "AWS::EC2::Subnet",
+        "Properties": {
+          "VpcId": {
+            "Ref": "MyVPC1"
+          },
+          "CidrBlock": "10.0.0.0/24"
+        }
+      },
+      "MyEC2Instance": {
+        "Type": "AWS::EC2::Instance",
+        "Properties": {
+          "ImageId": "ami-089c6f2e3866f0f14",
+          "SubnetId": {
+            "Ref": "MyPrivateSubnet"
+          }
+        }
+      }
+    }
+  }
+}
+
+
+EC2 with options
+
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Parameters": {
+    "InstanceTypeParameter": {
+      "Type": "String",
+      "Default": "t2.micro",
+      "AllowedValues": [
+        "t2.micro",
+        "m1.small",
+        "m1.large"
+      ],
+      "Description": "Enter t2.micro, m1.small, or m1.large. Default is t2.micro."
+    }
+  },
+  "Resources": {
+    "FirstEc2Instance": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "InstanceType": {
+          "Ref": "InstanceTypeParameter"
+        },
+        "ImageId": ""
+      }
+    }
+  }
+}
+
+S3 Bucket	
+
+{
+  "Parameter": {
+    "S3BucketName": {
+      "Description": "Name of the S3 Bucket",
+      "Type": "String",
+      "ConstraintDescription": "S3BucketName must be between 3 and 63 characters in length.",
+      "MinLength": 3,
+      "MaxLength": 63
+    }
+  },
+  "Resources": {
+    "S3Bucket12": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketName": {
+          "Ref": "S3BucketName"
+        }
+      }
+    }
+  }
+}
+
+................................................................
+
+{
+	"AWSTemplateFormatVersion": "2010-09-09",
+	"Mappings":{
+	"RegionMap": {
+	"us-east-1": 
+}
+
+.............................
+
+add script before launching instance
+
+before that create S3 role and create bucket and upload index.html page
+
+#!/bin/bash
+yum update -y
+yum install httpd -y
+service httpd start 
+chkconfig httpd on
+aws s3 cp s3://urduitbucket/index.html /var/www/html
+
+
+.............................................................................
+
+how to check Kernel Version of linux OS?
+uname -a 	will print all info
+uname -r	will print all kernal
+
+How to check IP address of server?
+ifconfig
+ip a
+hostname -I
+
+How to check default gateway of server?
+route -vn
+
+What is ulimit?
+ulimit		it will check limit how many file can open at time
+lsof
+
+How to check which RPM has created /etc/password file?
+rpm -qf /etc/passwd  		show which rpm provides this file
+setup-2.8.71-10.el7.noarch
+rpm -ql setup-2.8.71-10.el7.noarch		it show files given by rpm
+
+Disk space is still full even after deleting a file of 5GB?
+lsof | grep deleted | wc -l
+
+How to ssh to your server?
+ssh -v root@localhost  -p 22
+
+Sudo bash vs sudo su -
+sudo bash 		it will remain in current working directory
+su - 			it will go in root dirctory and current working dir also root
+
+What is use of /home/user/.bash_profile?
+
+How to create alias of a command
+what is use of ~/.bashrc?
+what is use of curl?
+curl cmd show you if you host a local webserver that is working or not
+
+what is use of wget?
+download anything from remote side
+
+what is file name to manage dns entires on linux?
+vi /etc/resolv.conf
+namserver 8.8.8.8
+
+what is use of /etc/hosts entires?
+
+what is use W command?
+currently logged in user, and load of server
+
+How to kill all process of any user?
+ps fax | grep ping
+ps faxu | grep aashu
+pkill -u aashu
+
+How to mount disk permanently?
+fdisk -l 	to check disk
+mkfs.ext4 /dev/xvdb
+lsblk		it show you only that file system has been created
+/etc/fstab	mount permanently or temp
+mount 		temp mount
+
+How to check hidden files and how to create it?
+ls -la		hidden file
+
+How to start process at start up time?
+vim /etc/rc.local	make entry in this file, cmd
+crontab -e		make entry in there
+
+what does nameless dirctory represent?
+ll -a || less 
+.		my current working directory
+..		my parent directory
+cd /
+ls -la		
+.		my current
+.. 		my previous working directory  
+
+How do you check for free disk space?
+df -Th		free disk space
+df -ik		its show Inodes available and used
+
+
+How do you check size of a directory or file on your system?
+du -sh ./*
+
+How do you check open port on linux servers? 
+netstat -tunlp
+
+How do you check CPU usage for a process?
+top
+
+How you deal with mounting partitions?
+cat /proc/mount
+findmnt
+
+How to you/find use of a cmd you don't know?
+whatis tee
+
+How to check if ACL is set on a file.
+getfacl /etc/fstab	to get ACL permission
+setface /etc/fstab 	to set ACL permission
+
+What cmd do you use to check attribute of a file?
+how to check attribute 
+lsattr /etc/fstab	to check attribute of file
+chattr +i /etc/fstab    set attribute i immutable
+
+What would happen if I remove execute permission from a directory?
+chmod o-x lokendra/	if you try to access again same file you cant now
+cd lokendra/		if you try to access dir you cant to do this
+
+I am getting message (No Space Left on device) and df -Th show 50G free?
+df -ik			inode get full
+
+How to check if OS is running on virtual of physical machine?
+dmidecode | grep -i vm
+
+
+How to change owner and Group of a file?
+chown tom:tom /tmp/.abc
+
+What is use of NMAP cmd?
+nmap 127.0.0.1		search open port
+nmap -A 8.8.8.8
+
+
+How to remove an INODE from linux File system?
+
+...........................................................................
+
+Q1 A user is not to ssh to a remote server, what could be the reason cause?
+key file is wrong  permission key file is something else apart from 400
+vi /etc/ssh/sshd_config		check ssh port in the file
+also check route permission or particuler user permission is there or not?
+DenyUser tom
+AllowUser harry
+PublicKeyAuthentication yes 	or not?
+AutherizedKeysFile .ssh/authorized_keys		location of autherized key file
+PasswordAuthentication No			if its allow or not?
+
+/var/empty/sshd					permission of this folder must 711
+
+Q2 User root has created a file (/tmp/abc) with 700 permission, you want that your lokendra should have full access to file, how will do this?
+ setfacl -m u:manjeet:rwx /root/Downloads/mansan/mansan
+getfacl /root/Downloads/mansan/mansan 
+
+Q3 How will you change the default login shell for all upcoming users on Linux?
+vi /etc/default/useradd			change SHELL to any shell /sbin/nologin and try to user add, it will come with that shell now
+
+
+Q4 After creating password less ssh access, whenever I try to login to a server it asks me for the password, while I have verified that my public key is placed on a remote server?
+check permission of the file and the run cmd
+ssh-add		it will add key file for auth
+
+Q5 How to disable root account?
+sudo usermod -s /sbin/nologin root 	disable
+sudo usermod -s /bin/bash root		enable
+
+Q6 I have a server where httpd service is running, i want that httpd should be running on cpu core no 2 only. (CPUAffinity=2)
+locate httpd.service
+vi /usr/lib/systemd/system/httpd.service 	and specify cpu affinity 
+[Service]
+CPUAffinity=2					and save it
+
+Q7 After reboot, I can see a time difference in /var/log/message and os time.
+hwclock		hardward clock and system time need to be in sync  
+date
+
+Q8 I went to restart a service only if the service is already running. If service is in a stopped state the 
+systemctl try-restart httpd.service		if service running the it restart otherwise do nothing
+
+Q9 what is max filename length allowed in Linux?
+255
+
+Q10 what is drop cache in Linux and how do you clear it?
+cat /proc/sys/vm/drop_caches
+
+To free pagecache:  			#echo 1 > /proc/sys/vm/drop_caches
+To free dentries and inodes,		#echo 2 > /proc/sys/vm/drop_caches
+To feee pagecache, dentries and inodes 	#echo 3 > /proc/sys/vm/drop_caches
+
+
+......................................................................................
+
+USE method 	Utilization, Saturation and Errors
+check Up time with uptime/top/w		
+
+dmesg		- kernal buffer, check kernal logs, if any issue hardware/kernal level, -H
+vmstat		- virtual memory stat
+
+process ID 0 and is responsible for paging, and is actually part of the kernel rather than a normal user-mode process. 
+Process ID 1 is usually the init process primarily responsible for starting and shutting down the system. Originally, process ID 1 was not specifically reserved for init by any technical measures
+PID 0 
+PID 1 for systemd
+
+UID
+UID 0 is reserved for the root.
+UIDs 1–99 are reserved for other predefined accounts.
+UID 100–999 are reserved by system for administrative and system accounts/groups.
+UID 1000–10000 are occupied by applications account.
+UID 10000+ are used for user accounts.
+
+GID
+GID 0 is reserved for the root group
+GID 1–99 are reserved for the system and application use.
+GID 100+ allocated for the user’s group.
+
+.......................................................
+How will you change default user id value in linux?
+vi /etc/login.dfs 
+UID_MIN		1000
+UID_MAX		60000
+
+root# rm -rf /tmp/test gives operation not permitted. Reason?
+chattr +i /tmp/test	it (chattr) allows a user to set certain attributes of a file, now it cant deleted
+
+/etc/hosts (which RPM is responsible for creating this file).
+rpm -qf /etc/hosts		to find about rpm of that file
+
+what is difference b/w 	RPM and YUM?
+rpm	redhat package manager
+yum	yellow dog update modifier
+both use to manage s/w in linux system, used in like centos redhat os
+yum install the package or service with dependincies, 
+rpm by default cant install with dependenciy
+check rpm dependency 	rpm -qPR xxxx.rpm
+
+
+what is difference b/w s/f and hard link?
+hard link		inode value remain same, whatever hard link we create, ln cmd use
+ll -i /tmp/test		to find inode value
+
+soft link		inode value will change for soft link file, ln -s cmd use
+ll -i /tmp/test		you will see pointing path to mail file
+
+
+what is sticky bit?
+if implement sticky bit, the owner and root can delete the file, and it is implement on a folder
+
+how will you check open ports on linux server?
+netstat -tulnp
+
+how will you check open ports on remote servers (without login)
+nmap -A 8.8.8.8
+
+your site is throwing 500 error, how will you start troubleshooting?
+need to identify error code, 500 data server issue, etc
+
+how will you start troubleshooting if your site is down?
+
+
+how will you create space on disk if it is showing 100% used?
+df -h
+will check du -sh * 		if all good might need to increase disk space
+
+what is package of sar cmd and what does it do?
+sysstat is package for sar
+/etc/sysconfig/sysstat		here history, compressafter, SA_DIR=/var/log/sa, compression
+
+if want to find out file created by rpm 
+rpm -ql xxxx.rpm
+
+...............................................................................................................
+
+what is latest posgresql version?
+13
+
+select version();	
+
+How to get first 'N' records in postgresql?
+select * from call_history limit 5;
+select * from call_history order by salary desc;
+
+what is pgAdmin?
+the interface GUI screen where you run query
+
+How to change/alter data type of a column.
+alter cmd we can change/add/removing/modifying data type the column of a table
+
+
+What is table partitioning?
+Data partitioning, like you partition data on the basis of data like india,aus,pak customer
+
+
+
+Update and update
+
+insert into server_preference_store (context_id,context_type,key,value) values ('184','contactCenter','request.encoding','xml');
+
+update server_preference_store set key='request.encoding' where context_id='234';
+
+how to find max salary from 2 tables
+
+create database hra;
+
+create table t1 (empid serial primary key, empname varchar(50) not null, salary varchar(255) not null);
+create table t2 (salary varchar(255) not null, empname varchar(50) not null, empid serial primary key);
+
+alter table t1 rename to tone;				rename table
+
+alter table t1 add name varchar(50);			add a column in table
+
+alter table t1 drop column name ;			remove a column from a table
+
+alter table t1 rename COLUMN "empname" to  "name";	rename column 
+
+
+write a query to find the 3rd-hightest salary from the t1 table.
+select * from the t1 where order by desc limit 2,1;
+
+write a query to find the Nth highest salary from the table without using TOP/limit keyword.
+select salary from t1 where 2 =(select count(Distinct salary) from t2 where t2.salary > t1.salary);
+
+write query to find duplicate rows in a table.
+select *,count(empid) from t1 group by empid.
+select *,count(salary) from t2 group by salary;
+
+write a query to calculate the even and odd records from a table.
+select * from t1 where mod(empid,2)=0;		even
+select * from t1 where mod(empid,2)=1;		odd
+
+write a query to find 1st and last record from the t1 table.
+select * from t1 where empid = (select min(empid) from t1);	1st
+select * from t1 where empid = (select max(empid) from t1);	last
+
+How do you copy all rows of a table using sql query?
+create table t1_copy as select * from t1;		copy full table
+create table t1_copy as select empid,empname from t1;	only copy 2 column
+create table t1_copy as select * from 3=4;		create blank table with column names
+
+write a query to retrieve the list of employees working in the same department.
+select distinct e.empid,e.name,e.salary from t1 e, t2 e1 where e.name=e1.empname and e.empid=e1.empid; 
+
+write a query to retrieve the last 3 records from the t1 table.
+select * from (select * from t1 order by empid desc limit 3) temp order by empid asc;
+
+write a query to fetch details of employees whose name ends with an alphabet 'y' and contains five alphabets.
+select * from t1 where name like '____y';
+
+
+
+............................................................................................
+git github
+
+install git on 2 machine
+yum install git
+
+git config --global user.name "ajay"
+git config --global user.email "ajayyadav19@gmail.com"
+git config --list
+
+which git
+git --version
+
+
+create git account on website
+https://github.com
+
+got to 1 machine
+create direcotry 
+mkdir mumgit
+cd mumgit
+git init
+
+
+create got file
+cat > mumbai1
+git status					check status, check if code in working space or commited
+git add .					add to staging
+git commit -m "My First commit from mumbai"	commited, changed got saved, and versioning started
+git status					now working are is empty
+git 							it will show commit id
+git show 8512df9c8bd				it will show commited id status
+
+connect system git to github
+git remote add origin https://github.com/manjeetyadav19/repo.git
+git push origin master 							push code to github	
+
+
+in another account add remote origin and then pull data
+git pull origin master					pull data from repo
+
+
+To ignore the file while commiting
+vi .gitignore
+*.css
+*.java
+
+git add .gitignore
+git commit -m "latest update exclude .css"
+
+
+To check branches 
+git branch		to check branches
+git branch man		to create branch
+git checkout man	to switch branch
+git log --oneline	will get all commits in one liner
+
+
+To can't merge branch of diff repositories
+
+We use pulling mechanism to merge branches
+git merge man					to merge branch
+
+
+Stashing
+git stash			to put data in stash
+git stash list			to see stashed items list
+git stash apply stash@{3}
+then you can add and commit
+
+To clear the stash items
+git stash clear			clear all stash file
+
+Git reset
+to reset staging area
+git reset <filname>		reset only one file
+git reset.			reset all file in staging area, remove all file from staging area
+
+git reset --hard		it will remove the code/file from the workspace and staging both area.
+
+git revert
+git revert help you to undo existing commit
+git revert <command-id>
+
+how to delete untracked files
+git clear -n			dry run
+git clear -f			delete forcefully
+
+Tags
+git tag -a <tagname> -m <msg> <commit-ID>
+
+To see
+git tag
+
+To see particular commit content by using tag
+git show  <tag name>
+
+To delete a tag
+git tag -d <tagname>
+
+cloning
+git clone https://github.com/manjeetyadav19/repo.git		cloning from github to local system
+
+
+..............................................................
+chef - configuration managment tool
+Pull based - chef
+Push based - Ansible
+IAC - Infrastruction as a code
+lang - ruby
+
+Architecture
+
+workstation (cookbook(recipe)) --knife-- chef server --knife--  node 1, node2(ohai)(chef client)
+
+bootstrap - chef server connect to the node, that process known as bootstrap
+ohai - current configuration, or maintain current state info. of node 
+chef client - Tool runs on every chef node to pull code from chef server (convergence)
+knife - is a cmd line tool, that establish communication among workstation, server and node
+Idempotency - tracking the state of system resources to ensure that the changes should not reapply Repeatedly.
+
+
+How to install chef on workstation
+www.chef.io  	download chef workstation 
+now to linux machine copy url and do
+weget  <url>
+yum install chef...
+which chef
+check --version
+
+cookbook
+cookbook is collection of recipes and some other file and folders
+checfignore - like .gitignore
+kitchen yml - for testing cookbook
+metadata.rb - name version author etc of the cookbook
+readme.md - information about usage of cookbook
+
+recipe - where you write code
+
+mkdir cookbooks
+cd cookbooks
+chef generate cookbook test-cookbook
+
+cd test-cookbook
+
+chef generate recipe test-recipe.rb
+to check use tree cmd
+
+cd ..
+
+vi test-cookbook/recipes/test-recipe.rb
+
+
+create on recipe
+file '/home/ec2-user/myfile' do
+content 'welcome to nonstopstep'
+action :create
+end
+
+
+chef spec ruby -c test-cookbook/recipes/test-recipe.rb		to check if code is ok
+
+chef-client -zr "recipe[test-cookbook::test-recipe]"		z meaning for local machine, r mean run list
+
+2nd recipe
+cd test-cookbook
+chef generate recipe recipe2
+cd ..
+vi test-cookbook/recipes/recipe2.rb----------------------------------
+package 'tree' do
+action :install
+end
+
+file '/home/ec2-user/myfile2' do
+content 'second Project code'
+action :create
+end
+----------------------------------
+
+chef-client -zr "recipe[test-cookbook::recipe2]"
+cat /myfile2
+yum remove tree -y 
+chef 
+
+recipe 3 deploying an apache server
+
+chef generate  cookbook apache-cookbook
+cd apache-cookbook/
+chef generate recipe apache-recipe
+tree
+cd ..
+ls
+
+vi apache-cookbook/recipes/apache-recipe.rb--------------------
+package 'httpd' do
+action :install
+end
+
+file '/var/www/html/index.html' do
+content 'welcome to nostopstep'
+action :create
+end
+
+service 'httpd' do
+action [:enable, :start]
+end
+----------------------------------
+
+chef exec ruby -c apache-cookbook/recipes/apache-recipe.rb
+chef-client -zr "recipe[apache-cookbook::apache-recipe]"
+
+Resource: it is the basic component of a recipe used to manage the infrastructure with diff kind of states there can be multiple resources in a recipe, which wil help in configuration and managing the infrastructure
+eg
+Package: tree, httpd 
+Service: enable, disable, start, stop, status
+user: manage the user, create user.
+group: create group
+templete: manage file with embadded ruby template
+cookbook-file: transfers the file from the files subdirectory in the cookbook to a location on the node
+file: manage the content of a file on the node.
+execute: execute a cmd on the node
+cron: edit an existing cron file on the node
+directory: mangages the directory on the node 
+
+
+type of attribute
+default
+force-default
+normal
+override
+force-override
+automatic
+
+if written 2 code same to same, bt 1 is default and another 1 is force-default, so priority of force-default is higher
+
+where we can define attri
+Node 
+cookbook
+roles
+enviroments
+recipes
+
+Login into amazon linux machine
+sudo su 
+ohai
+ohai ipaddress
+ohai memory/total
+ohai cpu/0/mhz
+
+recipe 3
+cd apache-cookbook
+chef generate recipe recipe3
+cd ..
+vi apache-cookbook/recipe/recipe3.rb----------------------------------
+file '/home/ec2-user/basicinfo' do
+content "This is to get attribute
+HOSTNAME: #{node['hostname']}
+IPADDRESS: #{node['ipaddress']}
+CPU: #{node['cpu']['0']['mhz']}
+MEMORY: #{node['memory']['total']}"
+action :create
+end
+----------------------------------
+
+How to execute linux cmd in b/w the recipe
+
+vi test-cookbook/recipe/test-recipe1.rb----------------------------------
+execute "run a script" do
+command <<-EOH				
+mkdir /home/ec2-user/manjeet
+touch /home/ec2-user/manjeet/file1
+EOH
+end
+----------------------------------
+EOH means end of here of ruby script
+
+
+vi test-cookbook/recipe/test-recipe2.rb----------------------------------
+user "rajput" do
+action :create
+end
+----------------------------------
+
+vi test-cookbook/recipe/test-recipe3.rb----------------------------------
+group "common" do
+action :create
+members 'rajput'
+append true
+end
+----------------------------------
+append true 	means add in previous one, dont overide
+
+what is runlist?, run multiple cookbook recipe in one go
+To run the recipes in a sequence order that we mention in a run list
+with the process, we can run multiple recipies, but the condition is, there must be only one recipe from one cookbook
+
+chef-client -zr "recipe[test-cookbook::test-recipe],recipe[apache-cookbook::apache-recipe]"
+
+How to include recipe
+vi test-cookbook/recipes/default.rb----------------------------------
+include_recipe "test-cookbook::test_recipe"
+include_recipe "test-cookbook::recipe2"
+----------------------------------
+
+chef-client -zr "recipe[test-cookbook::default]"
+
+combine multiple default
+chef-client -zr "recipe[test-cookbook::default],recipe[apache-cookbook::default]"
+OR
+chef-client -zr "recipe[test-cookbook],recipe[apache-cookbook]"
+
+
+.............................
+chef server is going to be a mediator for the code or cookbook
+
+workstation --chef server -- nodes
+first create account on chef server
+then attach your workstation to chef-server
+Now upload your cookbook from workstation to chef- server
+apply cookbooks from chef-server to node
+
+search chef.io - create account
+go to chef account - check on organisation - start kit - download starter kit
+open the download content - unzip - chef- repo
+
+cp chef-repo/
+ls -a
+cd chef/
+ls
+knife.rb
+cat knife.rb
+you will get url of chef server
+ 
+
+scp -i "AWSSingaporeKey.pem" -rP 22 /root/Downloads/chef-repo/ ec2-user@ec2-18-139-222-22.ap-southeast-1.compute.amazonaws.com:/home/ec2-user
+
+knife ssl check		to check if you are connected with chef server or not?
+
+..........................
+Bootstrap a Node - Attaching a node to the chef server
+during bootstrap chef repo package will copy on nodes, and it will node will also connect to the chef server
+
+How to connect a node the chef server
+create nodes in same AZ 
+
+Now go to workstation
+knife bootstrap node_ip --ssh-user ec2-user --sudo -i node-key.pem -N node1	(node-key.pem in chef-repo folder)
+knife bootstrap 172.31.29.224 --ssh-user ec2-user --sudo -i AWSSingaporeKey.pem -N node2
+knife bootstrap 172.31.21.197 --ssh-user ec2-user --sudo -i AWSSingaporeKey.pem -N node1
+
+knife node list 		to check connected node list 
+
+then node will visible on chef UI server also
+
+there is 2 cookbook 1 that created on root or home folder of user
+ /home/ec2-user/cookbooks/apache-cookbook/
+/home/ec2-user/chef-repo/cookbooks		and another 1 is in chef-repo folder that is downloaded from the chef server
+
+copy folder from the home folder to chef-repo
+pwd
+/home/ec2-user/chef-repo/cookbooks
+mv /home/ec2-user/cookbooks/apache-cookbook/ cookbooks/
+mv /home/ec2-user/cookbooks/test-cookbook/ cookbooks/
+
+rm -rf /home/ec2-user/cookbooks/		delete old 
+
+.........................................................
+Now We have to upload apache-cookbook
+knife cookbook upload apache-cookbook
+
+Now to check whether cookbook is uploaded apache-cookbook
+knife cookbook list
+
+Now we will attach the recipe, which we would like to run on node
+knife node run_list set node1 "recipe[apache-cookbook::apache-recipe]"
+
+knife node show node1					to check attached recipe
+Runlist recipe[apache-cookbook::apache-recipe]
+
+..................................................
+
+Now take access of node1 with the help of ssh
+go to chef-client
+Now all files would be updated, go to browser, paste public ip of the node, you will get webpage
+
+...........................................................
+go to workstation again
+vi cookbook/apache-cookbook/recipes/apache-recipe.rb
+Now change some content &  
+test 2 note added
+
+go again on node1 and run
+chef-client
+
+...........................
+now, we do not want to call chef-client everytime
+we want to automate this process
+go to node1
+
+vi /etc/crontab
+* * * * * root chef-client
+
+now go to chef-workstation
+make some changes
+vi cookbook/apache-cookbook/recipes/apache-recipe.rb
+test 3 note added
+
+uplaoad on the chef-server
+knife cookbook upload apache-cookbook
+
+...............................................
+
+Now create one more node node2
+Advance details
+#!/bin/bash
+sudo su
+yum update -y
+echo "* * * * * root chef-client" >> /etc/crontab
+
+Now go to workstation and run bootstrap cmd
+Now attach cookbook to node run list
+Now check in browser node2 shows webpage
+
+.....................................................
+
+To see list of cookbook which are present in chef-server
+knife cookbook list
+
+To delete cookbook from chef-server
+Knife cookbook delete <cookbook name> -y
+
+To see list of nodes which are present in chef server
+knife node list
+
+To delete nodes from chef-server
+knife node delete <node name> -y
+
+To see list of clients which are present in chef-server
+knife client delete <client name> -y
+
+To see list of roles which are present in chef-server
+knife role list
+
+To delete roles from chef-server
+knife role delete <role name> -y
+
+
+Roles------------------------
+cd roles
+
+vi devops.rb
+name "devops"
+description "Web server role"
+run_list "recipe[apache-cookbook::apache-recipe]"
+
+Now comeback to chef-repo
+Now upload the role on chef-server
+knife role from file roles/devops.rb
+
+If you want to see the role created
+knife roles list
+
+Now create two instances as node1 & node2 is same AZ as of workstation
+Now bootstrap the node
+
+knife bootstrap <private-ip> --ssh-user ec2-user --sudo -i AWSSingaporeKey.pem -N node1
+knife bootstrap <private-ip> --ssh-user ec2-user --sudo -i AWSSingaporeKey.pem -N node2
+..................................................................
+
+Now connects these nodes to role
+knife role list
+knife node run_list set node1 "role[devops]"
+knife node run_list set node2 "role[devops]"
+
+knife node show node1 / 2
+
+knife cookbook upload apache-cookbook
+
+Now check public-ip of any node in browser
+
+cat cookbook/apache-cookbook/recipes/recipe1.rb
+
+vi roles/devops.rb
+name "devops"
+description "web server role"
+run_list "recipe[apache-cookbook::recipe1]"
+
+knife role from file roles/devops.rb
+Now, take access of any node via ssh & check
+
+Now again go to workstation
+vi roles/devops.rb
+name "devops"
+description "web server role"
+run_list "recipe[apache-cookbook]"
+
+knife role from file roles/devops.rb
+knife cookbook upload apache-cookbook
+
+vi roles devops.rb
+name "devops"
+description "web server role"
+run_list "recipe[apache-cookbook]","recipe[test-cookbook]"
+
+Now upload this role to server
+
+knife role from file roles/devops.rb
+
+knife cookbook upload test-cookbook
+
+vi cookbook/test-cookbook/recipes/test-recipe6.rb
+%w (httpd mariadb-server unzip git vim)
+.each do |p|
+
+package p do 
+action :install
+end
+end
+
+knife cookbook upload test-cookbook
+
+Now go inside any node search git, if you will get git inside node, it means works properly
+
+....................................................................
+
+Docker 
+docker id a adv. version of virtualisation
+
+
+Docker Hub
+	|
+	|
+container/OS
+docker engine
+    OS
+   H/W
+
+
+VM	VM
+OS	OS
+EXSI - Hyper
+Physical H/W
+
+
+Docker is an source centralised platform designed to create deploy and run applications.
+Docker uses container on the host OS to run applications. It allows applications to use this same linux kernal as a system on the host computer, rather than creating a while virtual OS
+
+We can install docker on only OS but docker engine runs natively on linux distribution 
+Docker writtern in 'go' lang.
+Docker is a tool that performs OS level virtualization, also known as containerization
+Before docker many users faces that problem that a particular code is running in the developer's system but in the users system 
+Docker 	is set of platform as a service that was OS level virtualization whereas VMware was H/W level virtualisation
+
+
+Rapid Antigence test
+
+CBC complete blood count
+CPR C-reactive protein
+
+RT-PCR test
+
+Advantages of Docker
+No Pre-allocation of RAM
+CI Efficiency - docker enables you to build a container image and use that same image across every step of the deployment process 
+less cost
+
+
+Developer 
+   |
+   |
+   |
+Docker file ---Docker engine/daemon(image)----Docker Hub(Registry) 
+			|
+			|
+		    container
+
+
+Docker Daemon - 
+Docker daemon runs on the host OS 
+It is responsible for running containers to, manages docker services.
+Docker Daemon can communicate with other daemons
+
+Docker client
+Docker users can interact with docker daemon through a client
+Docker client uses commands and Rest API to communicate with the docker doemon
+when a client runs any server cmd on the docker client terminal, the client terminal sends these docker cmd to the docker daemon
+It is possible for docker client to communicate with more than one damon
+
+Docker Host
+Docker host is used to provide an envionment to execute and run applications. it contains the docker daemon. images, containers, networks and storage
+
+Docker Hub/Registry
+Public
+Private
+
+Docker Images
+Docker images are the read only binary templetes used to create docker containers
+
+OR
+
+Single file with all dependencies and configuration required to run a program
+
+Ways to create an images
+1. Take Image from docker hub
+2. create image from docker file.
+3. create image from existing container
+
+Docker container
+contains hold the entire packages that is needed to run the application
+Or
+
+In other words, we can say that, the image is a template and the container is a copy of that template
+Container is like a virtual machine
+images becomes container when they run on docker engine.
+
+
+..........................................
+yum install docker -y
+
+To see all images present in your local
+docker images
+
+To find out images in docker hub
+docker search jenkins
+
+To downloads image from dockerhub to local machine
+docker pull jenkins
+
+To give name to container
+docker run -it --name bhupender ubuntu /bin/bash	run (create and start) -it (interactive mode / terminal)
+
+To check, service is start or not 
+service docker status
+
+To start container
+docker start bhupender
+
+To go inside container
+docker attach bhupender
+
+To see all containers
+docker ps -a
+
+To see only running containers
+docker ps
+
+To stop container
+docker stop bhupinder
+
+To delete container
+docker rm bhupinder
+
+
+Whereas in docker exec command you can specify which shell you want to enter into. It will not take you to PID 1 of the container. It will create a new process for bash. docker exec -it < container-id > bash. Exiting out from the container will not stop the container.
+
+.....................................
+Create image from own container
+docker run -it --name bhupicontainer centos /bin/bash
+cd tmp/
+
+Now create one file inside this tmp directory 
+touch myfile
+
+now if you want to see 	the difference b/w the base image & changes on it then
+docker off bhupicontainer updateimage
+
+C /root
+A /root/.bash_history
+C /tmp
+A /tmp/myfile
+
+Now create image of this container 
+docker commit newcontainer updateimage
+
+docker images
+Now create container from this image
+docker run -it --name rajcontainer updateimage /bin/bash
+
+ls
+cd /tmp
+ls
+myfile
+
+...................................
+creating image from dockerfile
+dockerfile is basically a text file, it contains some set of instruction 
+Automation of docker image creation
+
+Docker components
+FROM - 
+For base image this cmd must be on top of the dockerfile.
+
+RUN -
+To execute cmd, it will create a layer in image.
+
+MAINTAINER -
+Author / Owner / Description
+
+COPY - 
+copy files from local system (docker vm), we need to provide route, destination, we cant download file from internet and only remote repo.
+
+ADD - 
+Similar to copy but, it provides files from internet, also we extract file at docker image side.
+
+EXPOSE - 
+To expose ports, such as port 8080 for tomcat, port 80 for nginx etc.
+
+WORKDIR -
+To set working directory for a container.
+
+CMD
+Execute cmd but during container creation
+
+COPYPOINT - 
+Similar to cmd, but has higher priority over cmd, 1st cmd will be executed by ENTRYPOINT Only.
+
+ENV - 
+Environment variables
+
+..................................................
+Dockerfile
+1. create a file named dockerfile
+2. add instruction in dockerfile
+3. Build dockerfile to create image
+4. Run image to create container 
+
+
+vi Dockerfile-----------------------
+FROM ubuntu
+RUN echo "Technically giftgu" > /tmp/testfile
+------------------------------------
+
+To create image out of dockerfile
+Docker build -t myimg
+Docker ps -a
+docker images
+
+Now create container from the above image
+docker run -it --name mycontainer myimg /bin/bash
+cat /tmp/testfile
+
+................................................
+vi Dockerfile
+FROM centos
+WORKDIR /tmp
+RUN echo "Welcome to nonstop step" > /tmp/testfile
+ENV myname manjeetyadav
+COPY testfile1 /tmp
+ADD test.tar.gz /tmp
+
+.................................
+Volumne is simply a directory inside our container 
+1stly, we have to declare the directory as a volume and then share volume 
+Even if we stop container, still we can access volume
+Volume will be created in one container 
+You cant create volume from existing container 
+You can share one volume across any number of containers 
+Volume will not be installed when you update an image 
+You can mapped volume in two ways 
+Container - container 
+Host - container 
+
+Benifits of volume
+Decouping container from storage 
+Share volume among different container 
+Attach volume to containers
+On deleting container volume does not delete
+
+..........................
+Creating file from Dockerfile
+create a Dockerfile and write
+FROM centos
+VOLUME ["/myvolume"]
+
+Then create image from this dockerfile
+docker build -t myimage .
+
+Now create a container from the image & Run
+docker run -it --name container1 myimage /bin/bash
+
+Now do ls, you can see myvolume1
+
+Now, share volume with another container 
+Container1 -- Container2
+
+docker run -it --name container2(new) --privileged=true --volumes from container1 centos /bin/bash
+
+Now after creating container2, myvolumes is visible whatever you do in one volume, can see from other volume
+touch /myvolume1/samplefile
+docker start container1
+docker attach container1
+ls /myvolume1
+you can see samplefile 
+
+
+.....................................
+Now try to create volume by using cmd
+docker run -it --name container3 -v /volume2 centos /bin/bash
+
+do ls - cd /volume2
+
+Now create one file cont3file and exit
+Now create one more container, and share volume
+
+docker run -it --name container4 --privileged=true -it --name container4 --privileged=true --volumes-from container3 centos /bin/bash
+
+Now you are inside container, do ls you can see volume2
+
+Now create one file inside this volume and then check in container3, you can see that file
+
+...........................................................
+Volume (Host - container)
+docker files in /home/ec2-user
+docker run -it --name hostcount -v /home/ec2-user:/rajput --privileged=true centos /bin/bash
+
+cd /rajput
+do ls, now you can see all files of host machine
+
+touch rajputfile 	(in container)
+exit
+
+Now check in EC2 machine, you can see this file
+
+.......................
+Some other cmd for volume
+
+docker volume ls
+docker volume create <Volume name>
+docker volume rm <volume name>
+docker volume prune	{it removed all unused docker volume}
+docker volume inspect <volume name>
+docker container inspect <container name>
+
+.................................
+Expose (port expose)
+
+docker run -td --name techserver -p 80:80 centos	(d means daemon, it will run the docker container, but we not go inside it)
+
+diff in EXPOSE cmd and -p 	if do EXPOSE cmd, then container can communicate to another container, cant go to host machine.
+-p means expose for host and outside also
+
+docker ps
+docker port techserver			it will show all port of the container
+
+docker exec -it techserver /bin/bash	to go inside the container
+yum  install httpd -y
+cd /var/www/html
+echo "Subscribe Tech Guftugu" > index.html
+systemctl start httpd
+
+................................................
+docker run -td --name myjenkins -p 8080:8080 jenkins
+
+................................
+diff b/w docker attach and docker exec
+Docker exec creates a new process in the container's enviornment while docker attach just connect the standard input/output of the main process inside the container to corresponding standard input/output error of current terminal 
+
+docker exec is specifically for running new things in a already started container, be it a shell or some other process.
+
+what is the diff b/w expose and publish a docker?
+basically you have three options
+1. neither specify expose nor -p
+2. only specify expose
+3. specify expose and -p
+
+1. if you specify neither expose nor -p, the service in the container will only be accessible from inside the container itself
+2. if you expose a port, this service in the container is not accessible from outside docker, but from inside other docker containers, do this is good for inter-container communication.
+
+3.if you expose and -p a port, the service in the container is accessible from anywhere, even outside docker.
+
+................................................
+
+upload container image to docker hub - pull/push
+
+docker run -it ubuntu /bin/bash
+Now create some files inside container 
+Now create image of this container
+
+docker commit container1 image1
+
+Now create account in hub docker.com
+
+Now on your instance
+docker login
+
+enter username/password
+
+Now give tag to your image
+
+docker tag image1 docker id/newimage	(newimage any name)
+docker tag image1 manjeetyadav19/project1
+
+docker push dockerid/newimage
+docker push manjeetyadav19/project1
+
+Now you can see this image in docker hub account
+
+Now create one instance in tokyo region and pull image from hub
+
+docker pull manjeetyadav19/project1
+docker run -it --name mycontainer manjeetyadav19/project1 /bin/bash
+
+...............................................
+some important cmd
+
+stop all running containers : docker stop $(docker ps -a -q)
+
+delete all stopped contains : docker rm $(docker ps -a -q)
+
+delete all images : docker rmi -f $(docker images -q)
+
+................................................
+
+Ansible - configuration managment tool  - ansible is agentless system like chef no client required, its use SSH directly to communicate
+
+Anisible is an open-source IT configuration management, deployment and orchestration tool, it aims to provide large productivity gains to a wide variety of Automation challenges 
+
+can use this tool whether your servers are in on-premises or in the cloud
+
+It turns your code into infrastructure i.e your computing environment has some of the same attributes as your application.
+
+
+Ansible server --------- node1, node2, node3
+
+like recipe in chef, we have playbook in ansible
+
+Resources in chef, modules in ansible
+
+Advantages
+Ansible is free to use.
+Ansible is very consistent and lightweight and no constraints regarding the OS or Underlying H/W are present
+
+It is very secure due to its agentless capatilities and open ssh security features 
+
+Ansible does not need any special system administrator skills to install and use it (YAML)
+
+Push mechanism
+
+Disadvantages
+Insufficient user interface, through ansible tower is GUI, but it is still in development stages
+Cannot achieve full automation by ansible
+New to the market, therefore limited support and document is available.
+
+Terms used in Ansible
+Ansible server - the machine where ansible is installed and from which all tasks and playbooks will be ran.
+Module - Basically, a module is a cmd or set of similar cmds meant to be executed on the client-side.
+Task - A task is a section that consists of a single procedure to be completed 
+Role - A way of organising tasks and related files to be called is a playback. 
+Fact - Information fetched from the client system from the global variables with the gather-facts operation
+
+Inventory - file containing data about the ansible client servers
+Play - execution of a playbook
+handler - task which is called only if a notifier is present
+
+Playbook - It consist code in YAML format, which describes tasks to be executed 
+Host - Nodes, which are automated by ansible 
+
+..........................................................
+
+Create 3 instances in same AZ
+Take access of all machines, Now go inside ansible server and download ansible package
+wget http://.....rpm
+
+Now do ls
+
+yum install epel...rpm
+yum update -y
+
+Now we have to install all the packages one by one 
+
+yum install git python python-level python-pip openssl ansible -y
+
+Now go to hosts file inside ansible server and paste private-ip  of node1 & node2
+vi etc/ansible/hosts
+[demo]
+node1 private ip 
+node2 private ip 
+
+Now this hosts file is only working after updating ansible.cfg file
+
+vi etc/ansible/ansible.cfg
+
+uncommented 
+#inventory 
+#etc/ansible/hosts
+#sudo-user
+#root
+
+Now create one user, set passwd in all the three instances 
+
+adduser ansible 
+passwd ansible
+
+Now switch as Ansible user 
+su - ansible
+
+This ansible user dont have sudo privilege .
+visudo
+
+Now go inside this file.
+root	ALL=(ALL)	ALL
+ansible	ALL=(ALL)	NOPASSWD:ALL
+
+Now do this thing in other nodes also 
+Now go to ansible server and try a install httpd package as a ansible user
+
+sudo yum install httpd -y
+
+Now establish connection b/w server and node go to another server 
+ssh 172xxx
+
+Now we have to do some changes in sshd_config file go into ansible server
+
+vi /etc/ssh/sshd_config
+
+Do some changes & save 
+Do this work in node1 & node2 also, now verify in ansible server
+
+su - ansible
+ssh 172xxxx
+
+now it ask for passwd, enter the passwd, after that you will be inside node1
+
+..................................................................
+
+Now do ssh-keygen
+ls -a
+ cd ./ssh
+ls
+id_rsa id_rsa_pub
+
+copy to node1, node2
+
+ssh-copy-id ansible@172.31.27.226
+
+
+54.179.16.139	172.31.27.226
+13.229.247.99	172.31.30.185
+54.169.186.120	172.31.29.92
+
+ssh -i "AWSSingaporeKey.pem" ec2-user@ec2-54-179-16-139.ap-southeast-1.compute.amazonaws.com
+ssh -i "AWSSingaporeKey.pem" ec2-user@ec2-13-229-247-99.ap-southeast-1.compute.amazonaws.com
+ssh -i "AWSSingaporeKey.pem" ec2-user@ec2-54-169-186-120.ap-southeast-1.compute.amazonaws.com
+
+"all" pattern refers to all the machines in an inventory 
+ansible all --list-hosts
+ansible <group-name> --list-hosts
+ansible <group-name>[0] --list-hosts		1,2,3......-1
+
+groupname[0] pick 1st node
+groupname[-1] pick last node
+groupname[1-2] pick 2st to 3rd node
+groupname1,groupname2 pick multiple group
+demo[0-1],test[0-1]
+
+.........................................
+
+1. Ad-hoc cmd		simple linux cmd (temp), but no idempotency
+2. Modules		| yaml lang  | single cmd run at a time, 1 module at a time	
+3. Playbooks 		| yaml lang. | if run more then 1 module is call playbook
+
+Ansible modules and playbooks both have idempotency, and its use setup module, its just like ohai in chef
+
+Ad-hoc cmds are cmds which can be run individually to perform quick functions
+
+These ad-hoc cmds are not used for configuration managment and deployment, becz these cmd are one time usage
+The ansible ad-hoc cmd uses the /usr/bin/ansible cmd line tool to automate a single task
+
+go to ansible server
+ansible demo -a "ls"			-a means argument
+ansible demo[0] -a "touch file"	
+ansible all -a "touch file1"
+
+
+ansible demo -a "sudo yum install httpd -y"
+ansible demo -ba "yum install httpd -y"
+ansible demo -ba "yum remove httpd -y"
+
+
+Ansible Modules
+Ansible ships with a number of modules (called module libary) that can be executed directly on remote hosts or through playbooks
+
+your library of modules can reside on any machine, and there are no servers, daemon, or databases required 
+
+The default location for the inventory file is /etc/ansible/hosts
+
+Ansible Modules
+ansible demo -b -m yum -a "pkg=httpd state=present"		install=present, uninstall=absent, update=latest
+ansible demo -b -m yum -a "pkg=httpd state=latest"
+ansible demo -b -m yum -a "pkg=httpd state=absent"
+ansible demo -b -m service -a "name=httpd state=started"
+ansible demo -b -m user -a "name=raj"
+ansible demo -b -m copy -a "src=file1 dest=/tmp"
+
+
+Setup Module
+ansible demo -m setup
+ansible demo -m setup -a "filter=*ipv4*"
+.....................................................
+
+Playbook 
+
+playbook is ansible are written in YAML format
+It is human readable data serialzation lang. it is commonly used for configuration files.
+
+Playbook is like a file where you write codes. consist of vars, tasks, handlers, files, templates and roles.
+
+Each playbook is composed of one or more 'modules' in a list module is a collection of configuration files.
+
+playbooks are divided into many sections like 
+Target section - hosts or nodes, defines the host agaist which playbooks task has to be executed
+
+variables section - define variable 
+
+Task section - list of all modules that we need to run in order
+
+YAML
+
+for ansible, nearly every YAML files starts with a list.
+
+Each item in the list is a list of key-value pairs commonly called a directory.
+
+All YAML files have to begin "..."
+
+All members of a list lines must begin with same indentation level starting with "_"
+
+for eg
+
+--- # a list of fruits
+	fruits:
+	-mango
+	-strawberry
+	-banana
+	-grapes
+	-apple	
+...
+
+a dictionary is represented in a simple key: value form
+for eg
+	--- # detail of customer
+	customer:
+		name: _rajput
+		job: _dob
+
+...........................
+
+playbook
+vi target.yml
+--- # Target playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  gather_facts: yes
+		
+
+Now to execute this playbook
+ansible-playbook target.yml
+
+................................
+Now create one more playbook in ansible server
+vi target.yml
+--- # Target playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  
+  tasks: 
+  - name: install httpd on linux
+    action: yum name=httpd state=installed
+
+.....................................................
+
+Varible
+Ansible uses varibles which are defined previously to enable more flexibilty in playbooks and roles
+They can be used to loop through a set of given values, access various information likes the host name of a system and replaces certain strings in templetes with specifi values.
+
+put variable section above task so that we define it first & use it later
+
+now 
+vi vars.yml
+--- # my variable playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+
+  vars:
+    pkgname: httpd    
+  
+  tasks: 
+  - name: install httpd on linux
+    action: yum name='{{pkgname}}' state=installed
+
+ ...........................
+
+Handler Section
+A handle is exactly the same as a task, but it will run when called by another task
+
+OR 
+
+handler are just liker regular tasks in an ansible playbook, but are only run if the task contains a notify directive and also indicates that it changed something
+
+handler use where we have dependency, eg task have httpd service install and start, but in case httpd service did nt install, then no point to start service, so there is dependency, so 1st task need to perform 1st
+
+vi handler.yml
+--- # handler playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks: 
+  - name: install httpd on linux
+    action: yum name=httpd state=installed
+    notify: restart HTTPD
+
+  handlers:
+  - name: restart HTTPD
+    action: service name=httpd state=restarted
+.........................................................
+
+Dry run
+check whether the playbook is formatted correctly
+
+ansible-playbook handler.yml --check
+
+Loops
+sometimes you want to repeat a task multiple times, in computer programming, this is called loops, common ansible include changing Ownership on several files and/or directives with the files module, creating multiple, users with the user module , and repeating a polling step until certain result is reached.
+
+vi loops.yml
+--- # loops playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+   - name: add a list of users
+     user: name='{{item}}' state=present
+     with_items:
+             - manjeet
+             - yadav
+             - rohit
+             - soname
+             - suresh
+..................................
+
+Conditions
+Whenever we have diff diff scenarios, 
+we put contitions according to the scenario
+
+when statement
+sometimes you want to skip a particular cmd in a particular node
+vi condition.yml
+--- # loops playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+   - name: install httpd service centos
+     command: yum -y install httpd
+     when: ansible_os_family == "RedHat"
+   - name: install apach service on ubuntu
+     command: apt-get -y install apache2
+     when: ansible_os_family == "Debian"
+
+.....................................
+
+Vault	- passwd protected
+
+Ansible allows keeping senstive data such as passwords on keys in encrypted files, rather than a plaintext in your playbook
+
+creating a new encrypted playbook
+ansible-vault create vault.yml
+
+editing the encrypted playbook
+ansible-vault edit vault.yml
+
+To change the password
+ansible-vault rekey vault.yml
+
+To encrypt an existing playbook
+ansible-vault encrypt target.yml
+
+To decrypt an encrypt playbook
+ansible-vault decrypt target.yml
+
+.............................................
+
+Roles
+We can use two techinques for recuring a set of tasks: includes, and roles
+
+Roles are good for organising tasks and encapsulating data needed to accomplish those tasks
+
+we can organise playbooks into a directory structure called roles
+
+			Ansible Roles
+			
+
+adding more and more functionality to the playbook will make it difficult to maintain in a single file.
+
+Roles
+Default: It store the data about role/application default variables e.g. - if you want to run to port 80 or 8080 then variable needs to define in this path.
+
+Files: it contains files need to be transferred to the remote VM (state files)
+
+Handler: they are trigger or task we can segregate all the handler required in playbook
+
+Meta: this directory contain files that establish roles dependencies  eg. auther name, supported platform, dependencies if any
+
+Tasks: it contains all the tasks that is normally in the playbook, eg installing packages and copies files also.
+
+Vars: Variables for the role can be specified in this directory and used in your configuration files both vars and default store variables
+
+
+
+.............................
+	|		|
+	master.yml	roles(dir)
+	|		|
+	target		myroles(sub dir)
+	|		|
+	roles		task(again sub dir)(main.yml)
+	|		|
+	myroles		var(again sub dir)(main.yml)
+			| 
+			handler(again sub dir)(main.yml)
+
+Roles
+
+mkdir -p playbook/roles/webserver/tasks
+tree
+
+touch playbook/roles/webserver/tasks/main.yml
+
+touch playbook/master.yml
+
+vi playbook/roles/webserver/tasks/main.yml
+- name: install httpd
+  yum: pkg=httpd state=latest
+
+
+vi master.yml
+--- # master playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+
+  roles:
+          - webserver
+
+..................................................
+
+Kubernetes is an open-source container orchestration system
+Manage by workstation - K8s, and written in go lang
+
+Docker Swarm == kubernettes
+
+kubernette created by google, since 2003 and its name was borg, its donated by goolge to 2014 linux foundation
+
+Linux foundation - sub cloud native computing foundation - and in 2015 its lunched kubernetts open source v1.0
+latest v1.18
+
+CKA certified kubernettes administrator 
+
+Kubernetes 					containerized App
+ 		Managed containerized apps
+			Deploying
+			scheduling
+			scaling
+			load balancing
+			batch execution
+			rollbacks
+			monitoring
+
+Components
+1. API Server
+2. Scheduler
+3. Controller
+4. ETCD database
+5. kube proxy
+6. kubelet
+7. container - Docker
+8. POD
+
+
+Api server - our system need to communicate with cluster, it will be happen from the API server, every communication from scheduler, controller, database, continer etc happen through Api server
+
+Scheduler/controller/datatbase can be possible on master node, or we can put each one on diff node also.
+
+But in docker swarm all of them remain on 1 node
+
+Worker node
+kube - proxy , kubelet , docker container ......so these 3 possible on all worker node
+
+POD - each container work within POD.
+
+Eg - kuber admin send 1 request .... kubectl run web-server --imageengine
+request recive on API server, it will pass to scheduler, scheduler will check where should create container(Under POD) on the basis of ram, space etc available, it could be possible it will create on master node, or worknode1 , 2 etc
+
+scheduler go through API server to kubelet and ask for create node, kubelet will create a POD, and kubelet will ask to docker, create container within POD, so docker will create container, and inform back to kubelet, and kubelet will inform back to scheduler work is done.
+
+Kube proxy work related to network, network related management, kubl proxy give information to schedule it provided ip to the newly created POD(container)	
+
+Now  scheduler inform through API Server to database about container, and database put information related to the that new POD(container)
+
+scheduler also inform through API server to controller, that (POD)container created, now Controller job started, to control container, related to keep container up and running, all work related to container managment, in case container got deleted, it will recreate container again.
+
+POD - is logical boundary of container, POD is also collection of multiple container
+
+In POD we can keep single container, or we can put multiple container also 
+
+POD benifits
+
+In case no POD defined
+if something happen with Container, it cant create another container again, if we create container again, we will not able to get same ip again.
+
+In case POD defined. - by default 2 container
+Pause Image - it will contain POD ip and namespace of POD store here, its default, it create itself, this pause image also contain other container namespace in it. ip always assign to POD, its not assign to container, so no effect in case container delete or recreating again.
+
+In case if we have POD, we have redundency, if container delete, another container can create,
+
+In case something happen with POD, then we have concept deployment - service
+Service have 3 types:
+1.Cluster IP
+2.NodePort
+3.LoadBalancer
+
+we we using LoadBalancer then it consist 1. and 2. point itself.
+
+cmd: kuberctl run db-server --image=mysql
+kuberctl run web-server --image=wordpress
+
+another container - that is we create for any purpose
+...............................................................
+
+Kubernets Deployment Strategies
+Rolling deployment 	its by default
+Recreate 
+Canary Deploment (most imp) its also blue & green and Red & black deployment
+
+..........................................
+
+Kubernets vs Docker swarm vs Apache Mesos
+
+
+...........................................
+
+create 3 node cluster
+
+run cloud shell
+
+for access shell from google cloud
+gcloud container clusters get-credentials mycluster --zone us-centrali --project oceanic-work
+
+kubectl get nodes 	it will show all nodes
+
+kubectl get pods		it show all pods
+kubectl get nodes -o wide	it will show wide inform
+
+
+copy  all file from git hub
+git clone https://github.com/vipin2411/k8.git
+all yml file for kubernetes script
+
+
+single container pod
+app: nginxweb
+type: production
+ver:v1
+nginx:alpine
+
+multi-container pod
+app: nginxweb
+type: production
+ver:v1
+nginx:alpine
+vipin2411/curl
+
+
+when we create pod we use cmd line or yml file
+pod-without-port-lable.yaml
+apiVersion: v1 
+kind: Pod 
+metadata: 
+ name: webserver
+spec: 
+ containers:
+ - name: web
+   image: nginx:alpine
+
+pod cmd
+cat pod-without-port-lable.yaml
+
+kuberctl get pods
+check pod is already running 
+
+kuberctl describe pods
+detail info about pods
+
+kuberctl create -f pod-without-port-label.yaml
+creates the object specified in yaml file. in our case, object is pod
+
+kuberctl get pods
+now initially, it was showing status "ContainerCreating", then it changed to "Running"
+
+kuberctl get pods -o wide
+with "-o wide", we will get additional infor regarding pod IP and node on which it is scheduled
+
+kuberctl describe pods/webserver
+(gives detailed info about "webserver" pod. due to lengthy output, we are not interested in showing the whole output)
+
+kuberctl describe pods/webserver | tail
+(it will show last 10 lines of output)
+
+kuberctl exec -it wehserver sh
+(with "kuberctl exec" cmd we can run cmds inside container or can enter into container by using other options "-i" and -t by default, it will take us into first container of pod)
+
+kuberctl exec -it -c web webserver sh
+(we can specify which particular container you want to access in interactive mode. in this case we want to enter into "web" container of "webserver" pod)
+
+kuberctl delete -f pod-without-port-label.yaml
+will delete the pod "webserver"
+
+pod-curl.yaml
+
+apiVersion:v1
+kind: Pod
+metadata: 
+ name: browswer
+spec:
+ containers:
+ - name: curl
+   image: vipin2411/curl
+   imagePullPolicy: IfNotPresent
+   command: ['sh','-c','echo Pod running: sleep 7200']
+
+in the file, we have specified the image pull as "IfNotPresent" which means that we are instructing to kubernets to not pull the image from the registry, if it is already present on the node.
+
+But why we have added the cmd in container specifications? what is the purpose of this cmd and what it is doing. As such this cmd will just echo the comment "Pod running" and then go to sleep for 7200 seconds (2 hours). which means that for 2 hours some process will keep on running and our container will not get terminated.
+
+what will happen, if we will not specify the cmd. in that case your container will get created and immediately get terminated. thus your pod will never get created.
+
+then why we did not specify any cmd during creation of "webserver" pod from "nginx:alpine" image. this is becz when we use any web server image, by default, one daemon process is alwasy running.
+
+pod-with-port.yaml
+
+apiVersion:v1
+kind: Pod
+metadata: 
+ name: browswer
+ labels:
+  app: nginxweb
+spec:
+ containers:
+ - name: web
+   image: nginx:1:16-alpine
+   ports:
+   - containerPort:80
+
+
+Pod to Pod communication
+Node to Pod communication
+
+pod-multi-container.yaml
+
+apiVersion:v1
+kind: Pod
+metadata: 
+ name: webserver
+ labels:
+  app: nginxweb
+  type: production
+  ver: v1
+spec:
+ containers:
+ - name: web
+   image: nginx:1.16-alpine
+ - name: curl
+   image: vipin2411/curl
+   command: ["/bin/sh","-c","while:;do curl http://localhost:80/; done"]
+  
+How to install kubelete, kubeadm, and kubectl
+
+Steps and Commands:
+
+(This assumes you have 3 servers up and running)
+
+yum install docker -y
+
+cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+
+
+sudo yum install -y kubelet kubeadm kubectl
+
+systemctl enable kubelet
+
+systemctl start kubelet
+
+
+
+3. On each server, enable the use of iptables 
+echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+
+4. On the Master server only, initialize the cluster
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+
+(After this command finishes, copy kubeadm join provided)
+
+5. On the Master server only, set up the kubernetes configuration file for general usage
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+6. On the Master server only, apply a common networking plugin. In this case, Flannel
+kubectl apply -f https://raw.githubusercontent.com/cor...
+
+7. On the Worker servers only, join them to the cluster using the command you copied earlier. 
+kubeadm join 172.31.37.80:6443 --token ... --discovery-token-ca-cert-hash ...
+
+And that's it! You should now have a working kubernetes cluster!
+
+--- 
+Great resources I used to learn how to work with Kubernetes:
+1. Linux Academy (https://linuxacademy.com/)
+2. Udemy: Docker and Kubernetes: The Complete Guide (https://www.udemy.com/course/docker-a...)
+3. Kubernetes Documentation (https://kubernetes.io/docs/home/)
+4. Just play with it!
+
+
+kubernetes installation on centos 7
+
+
+Welcome || Asian Eye institute_Project || Project ID: 16152
+
+Re: AMEYO -- Basic training session
+Re: Welcome || Iradium Automobiles Private Limited_Project || Project ID: 16201
+Adding a new campaign Pharmadex_DCA20210514153141
+Ameyo IVR Concern-Urgent
+
+
+Dear Shivam,
+
+
+
+Dear Shivam,
+
+We called @9911551339 however, call was not answered.
+
+Please call us on Support Numbers (+01244771072) for discussion about raised concern.
+
+Awaiting your response to process the ticket further.
+
+Thanks and Regards,
+
+Manjeet Yadav.
+
+
+Dear Abhilash, 
+
+We are checking the concern internally, 
+
+We will update you further accordingly.
+
+Regards
+Manjeet
+
+1pm - 2:30pm check apr interval summary - agent took some calls
+
+acd interval summary - 1pm - 
+
+Dear Shivam,
+
+We are checking, we will update you on this further.
+
+Regards
+Manjeet
+
+Reporting Issue DCA20210514153098
+
+
+Dear Anupriya,
+
+We called @9311817281 however, call was not answered.
+
+Please call us on Support Numbers (+01244771072) for discussion about raised concern.
+
+Awaiting your response to process the ticket further.
+
+Thanks and Regards,
+
+Manjeet Yadav.
+
+
+7595841964	912241078133	inbound.call.dial	d657-60997e94-vcall-78982	ANSWERED	13/05/2021 12:55:21 PM
+9064529967	912241078133	inbound.call.dial	d657-60997e94-vcall-79631	ANSWERED	13/05/2021 1:08:02 PM
+9641737701	912241078133	inbound.call.dial	d657-60997e94-vcall-79707	ANSWERED	13/05/2021 1:09:59 PM
+6294827155	912241078133	inbound.call.dial	d657-60997e94-vcall-80511	ANSWERED	13/05/2021 1:25:32 PM
+7501775538	912241078133	inbound.call.dial	d657-60997e94-vcall-81083	ANSWERED	13/05/2021 1:37:23 PM
+9123724454	912241078133	inbound.call.dial	d657-60997e94-vcall-81362	ANSWERED	13/05/2021 1:43:16 PM
+8240400254	912241078133	inbound.call.dial	d657-60997e94-vcall-81967	ANSWERED	13/05/2021 1:57:30 PM
+
+
+
+
+       node_name        |     next_node_name      |           transition_event           | meta_data 
+-------------------------+-------------------------+--------------------------------------+-----------
+ startNode               | chkHoliday              | script.node.success                  | 
+ chkHoliday              | chkOfficeHour           | holiday.configuration.not.found      | 
+ chkOfficeHour           | welcomeNode             | office.hour.found.transition.success | 
+ welcomeNode             | Main_Menu               | success.listen.voice.log             | 
+ Main_Menu               | CallRecordingMesageNode | success.collect.digit                | 2
+ CallRecordingMesageNode | Script                  | failure.listen.voice.log             | 
+ Script                  | Menu2_Queue             | script.node.success                  | 
+ Menu2_Queue             | crm                     | success                              | 
+ crm                     | extension               | success                              | 
+ extension               | start_monitor           | dial.connected                       | 
+ start_monitor           | stop2                   | success                              | 
+ stop2                   |                         |                                      | 
+(12 rows)
+
+
+ select * from call_history where call_id ='d252-60944b27-vcall-819184';
+-[ RECORD 1 ]--------------+-----------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------
+call_id                    | d252-60944b27-vcall-819184
+call_leg_id                | d252-60944b27-inc-call-leg-AirtelMediator3477804
+contact_center_id          | 168
+process_id                 | 492
+campaign_id                | 477
+phone                      | 9849795787
+crt_object_id              | d252-60944b27-vce-daf-192186
+customer_id                | -1
+lead_id                    | 
+dialing_comments           | 918045413282
+is_outbound                | f
+call_type                  | inbound.call.dial
+system_disposition         | CONNECTED
+date_added                 | 2021-05-15 10:03:24.677
+db_date                    | 2021-05-15 10:20:58.920476
+call_result                | SUCCESS
+hangup_cause               | normal.clearing
+hangup_cause_description   | OK
+hangup_cause_code          | 200
+hangup_first               | f
+hangup_on_hold             | f
+call_originate_time        | 2021-05-15 10:03:24.677
+call_end_time              | 2021-05-15 10:20:11.293
+setup_time                 | 98
+ringing_time               | 0
+ivr_time                   | 318304
+talk_time                  | 688181
+hold_time                  | 0
+recording_file_url         | dacx://16@com-drishti-dacx-core-callmanager-asterisk-IAsteriskComponent:8008/dacx/var/ameyo/dacxdata/voicelogs/Delightful_Gourmet/2021-0
+5-15/catherinedeepika@licious.com/9849795787_catherinedeepika@licious.com_2021-05-15-10-03-24
+nodeflow_id                | d252-60944b27-nf-2746796
+actual_channel             | SIP/AirtelMediator-000e3142
+dtmf_info                  | 
+column_1                   | 
+value_1                    | 
+column_2                   | 
+value_2                    | 
+column_3                   | 
+value_3                    | 
+archive_id                 | 79250634
+connection_state           | 
+connection_state_data      | 
+customer_source            | 
+filter_source              | 
+is_test_call               | f
+num_attempts               | 0
+hangup_details             | SYSTEM_HANGUP
+related_crt_object_id      | 
+nodeflow_meta_data         | 
+dialed_call_details        | {"d252-60944b27-inc-call-leg-AirtelMediator3477804":{"9849795787":"connected"}}
+crm_url                    | https://app24.ameyoemerge.in:8785/delightful2level/customer.php?queueId=664&dstPhone=918045413282&campaignId=477&associationType=inbound
+.dial.association&sessionId=d252-60944b27-ses-catherinedeepika%40licious.com-3f9YbLzU-95677&maskingEnabled=false&userId=catherinedeepika%40licious.com&callType=inbou
+nd.call.dial&crm_push_generated_time=1621053502469&userCrtObjectId=d252-60944b27-ses-catherinedeepika%40licious.com-3f9YbLzU-95677-uce-9481013373%401061&queueName=in
+bound+queue&phone=9849795787&crtObjectId=d252-60944b27-vce-daf-192186
+ringing_start_time         | 
+src_phone                  | 9849795787
+dst_phone                  | 918045413282
+dialled_phone              | 918045413282
+customer_data              | {}
+vq_request_id              | 
+lead_name                  | 
+ucc_customer_id            | 
+callback_id                | 
+inbound_call_failure_stage | 
+
+select * from cm_cdr_history where call_leg_id ='d252-60944b27-inc-call-leg-AirtelMediator3477804';
+-[ RECORD 1 ]----------------------+---------------------------------------------------------------------
+call_leg_id                        | d252-60944b27-inc-call-leg-AirtelMediator3477804
+call_context_id                    | 1260
+voice_resource_id                  | 16
+entity_name                        | AirtelMediator
+src_phone                          | 9849795787
+dst_phone                          | 918045413282
+vr_call_leg_id                     | asterisk-callleg-16-nonoriginating-4939902
+properties                         | MEDIA_INFO_RTP_DEST_HOST=10.255.36.212                              +
+                                   | SRC_PHONE=9849795787                                                +
+                                   | techSpecificId=                                                     +
+                                   | tech.specific.id=78aadff303dd5406227a0e504c4c545a@dynamic           +
+                                   | which.side.hungup=us                                                +
+                                   | hungup.by.action=true                                               +
+                                   | actual.channel=SIP/AirtelMediator-000e3142                          +
+                                   | voice.resource.initialization.timestamp=Sat May 15 10:03:24 IST 2021+
+                                   | MEDIA_INFO_RTP_DEST_PORT=15278                                      +
+                                   | MEDIA_INFO_RTP_SRC_PORT=18240                                       +
+                                   | MEDIA_USER_AGENT=Asterisk PBX certified/13.21-cert3                 +
+                                   | MEDIA_INFO_RTP_CODECS_JOINT_CAPABILITY=(alaw)                       +
+                                   | hangup.time=2021-05-15 10:20:11.272
+actual_channel                     | SIP/AirtelMediator-000e3142
+hangup_cause                       | normal.clearing
+hangup_cause_code                  | 200
+setup_time_out                     | 0
+ring_time_out                      | 0
+setup_time                         | 98
+ring_time                          | 0
+talk_time                          | 1006518
+start_time                         | 2021-05-15 10:03:24.677
+end_time                           | 2021-05-15 10:20:11.272
+voice_resource_initialization_time | 2021-05-15 10:03:24.675
+tech_specific_id                   | 78aadff303dd5406227a0e504c4c545a@dynamic
+which_side_hungup                  | us
+dialled_phone                      | 918045413282
+archive_id                         | 
+
+select * from user_disposition_history where call_id ='d252-60944b27-vcall-819184';
+-[ RECORD 1 ]----------+----------------------------------------------------------------------------------
+archive_id             | 18548514
+id                     | d252-60944b27-user-disp-h-439162
+call_id                | d252-60944b27-vcall-819184
+call_leg_id            | d252-60944b27-out-call-leg-PrimaryliciousAirtelBLR3480598
+date_added             | 2021-05-15 10:08:22.469
+db_date                | 2021-05-15 10:20:58.920476
+user_disposition_time  | 2021-05-15 10:20:21.566
+transfer_time          | 
+transfer_to            | 
+disposition_details    | 
+disposition_class      | campaign.system.disposition
+disposition_code       | wrap.timeout
+user_id                | catherinedeepika@licious.com
+session_id             | d252-60944b27-ses-catherinedeepika@licious.com-3f9YbLzU-95677
+user_crt_object_id     | d252-60944b27-ses-catherinedeepika@licious.com-3f9YbLzU-95677-uce-9481013373@1061
+wrap_time              | 10310
+talk_time              | 688240
+working                | t
+campaign_team_id       | 
+disposed_by_crm        | f
+agent_queue_id         | 664
+auto_call_on_time      | 717951
+auto_call_off_time     | 0
+user_connected_time    | 2021-05-15 10:08:43.016
+user_disconnected_time | 2021-05-15 10:20:11.256
+campaign_id            | 477
+association_type       | inbound.dial.association
+request_id             | d252-60944b27-res-req-474354
+preview_start_time     | 
+preview_duration       | 
+hold_time              | 0
+additional_parameters  | 
+customer_hold_time     | 0
+notes                  | 
+all_group_ids          | 
+-[ RECORD 2 ]----------+----------------------------------------------------------------------------------
+archive_id             | 18548513
+id                     | d252-60944b27-user-disp-h-439161
+call_id                | d252-60944b27-vcall-819184
+call_leg_id            | d252-60944b27-out-call-leg-PrimaryliciousAirtelBLR3480248
+date_added             | 2021-05-15 10:07:44.823
+db_date                | 2021-05-15 10:20:58.920476
+user_disposition_time  | 2021-05-15 10:08:22.399
+transfer_time          | 
+transfer_to            | 
+disposition_details    | 
+disposition_class      | campaign.system.disposition
+disposition_code       | failed.association
+user_id                | catherinedeepika@licious.com
+session_id             | d252-60944b27-ses-catherinedeepika@licious.com-3f9YbLzU-95677
+user_crt_object_id     | d252-60944b27-ses-catherinedeepika@licious.com-3f9YbLzU-95677-uce-9481013373@1061
+wrap_time              | 0
+talk_time              | 0
+working                | t
+campaign_team_id       | 
+disposed_by_crm        | f
+agent_queue_id         | 664
+auto_call_on_time      | 35954
+auto_call_off_time     | 0
+user_connected_time    | 
+user_disconnected_time | 2021-05-15 10:08:22.399
+campaign_id            | 477
+association_type       | inbound.dial.association
+request_id             | d252-60944b27-res-req-474125
+preview_start_time     | 
+preview_duration       | 
+hold_time              | 0
+additional_parameters  | 
+customer_hold_time     | 0
+notes                  | 
+all_group_ids          | 
+
+select * from cm_cdr_history where call_leg_id ='d252-60944b27-out-call-leg-PrimaryliciousAirtelBLR3480598';
+-[ RECORD 1 ]----------------------+---------------------------------------------------------------------
+call_leg_id                        | d252-60944b27-out-call-leg-PrimaryliciousAirtelBLR3480598
+call_context_id                    | 1061
+voice_resource_id                  | 16
+entity_name                        | PrimaryliciousAirtelBLR
+src_phone                          | 9849795787
+dst_phone                          | 9481013373
+vr_call_leg_id                     | asterisk-callleg-16-originating-4942657
+properties                         | MEDIA_INFO_RTP_DEST_HOST=10.255.36.212                              +
+                                   | SRC_PHONE=9849795787                                                +
+                                   | techSpecificId=51d0ae2d03377c5704027d2b4081678c@ims.airtel.in       +
+                                   | tech.specific.id=51d0ae2d03377c5704027d2b4081678c@ims.airtel.in     +
+                                   | MEDIA_Ring=183                                                      +
+                                   | which.side.hungup=us                                                +
+                                   | hungup.by.action=true                                               +
+                                   | actual.channel=SIP/PrimaryliciousAirtelBLR-000e3387                 +
+                                   | voice.resource.initialization.timestamp=Sat May 15 10:08:23 IST 2021+
+                                   | MEDIA_INFO_RTP_DEST_PORT=17900                                      +
+                                   | MEDIA_P_Preferred_Identity=<sip:+918045413282@ims.airtel.in>        +
+                                   | MEDIA_INFO_RTP_SRC_PORT=16420                                       +
+                                   | MEDIA_INFO_RTP_CODECS_JOINT_CAPABILITY=(alaw)                       +
+                                   | hangup.time=2021-05-15 10:20:11.235
+actual_channel                     | SIP/PrimaryliciousAirtelBLR-000e3387
+hangup_cause                       | normal.clearing
+hangup_cause_code                  | 200
+setup_time_out                     | 35000
+ring_time_out                      | 35000
+setup_time                         | 4106
+ring_time                          | 14629
+talk_time                          | 688907
+start_time                         | 2021-05-15 10:08:23.615
+end_time                           | 2021-05-15 10:20:11.235
+voice_resource_initialization_time | 2021-05-15 10:08:23.615
+tech_specific_id                   | 51d0ae2d03377c5704027d2b4081678c@ims.airtel.in
+which_side_hungup                  | us
+dialled_phone                      | 9481013373
+archive_id                         | 
+
+
+       node_name        |     next_node_name      |           transition_event           | meta_data |   duration   
+-------------------------+-------------------------+--------------------------------------+-----------+--------------
+ startScript             | StartPlayWelcome        | script.node.success                  |           | 00:00:00.002
+ StartPlayWelcome        | checkHoliday            | success.listen.voice.log             |           | 00:00:05.565
+ checkHoliday            | dummyScript             | holiday.configuration.not.found      |           | 00:00:00.001
+ dummyScript             | checkOfficehr           | script.node.success                  |           | 00:00:00
+ checkOfficehr           | CallRecordingMesageNode | office.hour.found.transition.success |           | 00:00:00.001
+ CallRecordingMesageNode | ACDNode                 | success.listen.voice.log             |           | 00:00:07.626
+ ACDNode                 | CRMNode                 | success                              |           | 00:04:06.95
+ CRMNode                 | ChildNode               | success                              |           | 00:00:00.001
+ ChildNode               | OriginateCrt            | sync.child.flow.success              |           | 00:00:01.619
+ OriginateCrt            | reAcd                   | no.answer                            |           | 00:00:35.954
+ ACDNode                 | CRMNode                 | success                              |           | 00:00:00.071
+ reAcd                   | ACDNode                 | script.node.success                  |           | 00:00:00
+ CRMNode                 | ChildNode               | success                              |           | 00:00:00.001
+ ChildNode               | OriginateCrt            | sync.child.flow.success              |           | 00:00:01.144
+ OriginateCrt            | playBlank               | connected                            |           | 00:00:18.738
+ playBlank               | MakeCall                | success.listen.voice.log             |           | 00:00:00.663
+ MakeCall                | MonitorNode             | success                              |           | 00:00:00.065
+ MonitorNode             | stopSuccess             | success                              |           | 00:00:00.001
+ stopSuccess             |                         |                                      |           | 00:00:00
+
+
+
+Organization
+Folder
+Project
+Resource
+
+GCP is hierarchy structure
+
+Compute is available in GCP, like you can select 2gb ram, 200gb room
+
+ML AI
+
+SDN Software-defined networking
+
+
+In GCP we have project number, that is unique number, also you can put billing on project basis also
+
+Everything is there start with V, virtual instance, virtual private network
+
+famous hypervisor Esxi, and google use kvm, hvm
+
+
+ID access request
+
+
+........................................
+Docker Environment
+
+Docker Engine - Docker CLI - Docker API - Docker Daemon
+Docker Objects - Docker images - Docker containers - Docker volumes - Docker networks - Docker swarm nodes & services
+Docker Registry
+Docker Compose 
+Docker Swarm
+
+Docker Objects - 
+Docker images - Docker images are sets of instructions that are used to create containers and execute code inside it.
+Docker containers 
+Docker volumes
+Docker networks 
+Docker swarm nodes & services
+
+
+................................................
+
+
+
+Pod creation Using CLI  - stand alone pods
+
+creating pods using CLI without specifying "yaml" file. As such, not recommended method, but still we will go ahead with creating 2 different pods using 2 different pods using different images as we did with "yaml" files. Four types of objects can be created by using CLI. The object are Pods, Deployments, Jobs, CronJobs Which type of object gets created will depend upon the options passed. Here we are interested in creating pods.
+
+$kuberctl run webserver --image=nginx:alpine --restart=Never
+(create pod "webserver" from "nginx:alpine" image. we have defined restart policy as "Never" which means that if somehow, pod gets terminated, do not restart it. if we are not going to specify restart option, then deployment (deploy) plus replicaset (rs) object will get created)
+
+$kuberctl run curl --rm --restart=Never --image=vipin2411/curl -it --sh
+(it will create pod "curl" in interactive mode. on exit from the pod, pod will automatically gets terminated due to "--rm" option)
+
+
+Kubernetes ReplicaSet
+
+		replica set
+		  |
+Pod	--- 	Pods
+
+There are many ways we can create pods. Till now we have created the pods directly by using "yaml" file. As such, creating pods in this way is not the recommended. There are many issues with this approach. First of all if we have to create hundreds of pods. we will have to create hundreds of "yaml" files or run pod creation cmds hundreds of time. Not a good idea at all. Other is when pods gets terminated unexpectly, we have to create that pod manually.
+
+So to solve these problems, kubernetes have defined numbers of objects which can create pods at a scale and can solve pod termination issue. Two of the most used objects are ReplicaSet and Deplyment. We can specify numbers of pods required to these objects. Now it is the responsiblility of these objects to keep that numbers of pods running.
+
+
+ReplicaSet Yaml file
+
+pod-using-replica-set-ml.yaml
+
+apiVersion: apps/v1 
+kind: ReplicaSet
+metadata:
+ name: webserver-rs
+spec:
+ replicas: 3
+ selector:
+ matchlabels:
+  app: nginxweb
+ template:
+  metadata:
+   labels:
+    app: nginxweb
+    env: development
+  spec:
+   conainers:
+    - name: web
+    image: nginx:1:16-alpine
+
+
+ReplicaSet commands
+
+$ cat pod-using-replica-set-ml.yaml
+(View replicaset "yaml" file)
+
+$ kuberctl create -f pod-using-replica-set-ml.yaml
+(create "webserver-rs" replicaset object)
+
+$ kuberctl get rs
+(it is shocking that all the 3 desired pods are in ready state)
+
+$ kuberctl get pods
+(all the three pods are running)
+
+$ kubectl get pods -o wide
+(gives additional information such as IP addresses and nodes)
+
+$ kuberctl get pods --show-labels
+(shows labels on pods) 
+
+
+pod-using-replica-set-ml.yaml
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+ name: webserver-rs
+spec:
+ replicas: 3
+ selector: 
+  matchLabels:
+   app: nginxweb
+  template:
+   metadata:
+    labels:
+     app: nginxweb
+     env: development
+    spec:
+     containers:
+     - name: web
+       image
+
+When have you handled huge pressure in a work-related situation?
+I studied the brief carefully and then created a plan of action for getting the project delivered on budget and also on time.
+
+It was tough going, but i put in the extra hours' work needed and i am pleased to say i managed to get the project finished on time and to specification. my supervisor was thrilled with my work ethic and effor, and he hanked me for my commitment and dedication to delivering this important project.
+
+Can you describe a stressful situation and how you handled it?
+when pri line got down, or application down, application got slow, down time is there.
+
+customer calling, keep calling, and need to answer to customer, and need to give assurance, it will resolve ASAP.
+
+also work side by side to resolve the issue, 1st identify, then try to resolve the issue 1st and inform to customer about down is resolved, 
+
+And the provide the RCA
+
+@ Can you give an example of how you dealt with conflict in the workplace?
+in my previous organisation 1 of my colleague had problem with my, not sure he not liked my work, or jealous about my initiative or performace, 
+
+so i have ask him personally 1 meeting, just causal meeting, started with basic conversation, so make him what i am, what i feel and how i think, i cleared myself, i have no hard feeling for him or anybody, i have helping nature, also explained if something required in office and working enviorment, then we have do it, even its not my area of interest or other person in the team, but as team we have to perform the task, because that is requirment, and company demanded and its need to be done.
+
+But personally whatever i can do professionally, any help he need or other team member need i will be ready to do. i am not jealous by anybody or i am not  un-cooperative with you or other member in team.  
+
+then he started understanding me, and the environment is created in the team, whatever task we receive, we started done effectively and we done our best, whenever any help required within team, we done as much as possible.
+
+
+Can you tell me about a mistake you made at work and how handled it?
+Not any big mistake recently, but i have done when i was new in the company, and i was part of testing team, i was doing a competiblity test of application with the customer database replica with our new application upgrade release, During the testing, while we apply patch, i made mistake, i applied patch without remove some previous history database, like data_base version history, and database_schema_version history. and database got corrupted, and this database was around 100gb size, 
+
+So i have acknolege my mistake, and informed to the manager, i got annoyed, the main reason because, we have committed time to the customer, about new release upgrade, we had some fixes in the current release, and database is got corrupted, now 1 more extra day was required, and it need to confirm inform again to the customer, and that customer is very cencitive customer, it was not easy to give any excuse easly to this customer, somehow we got 1 more extra day, and i have restored another copy of that database by self in 24 hours, and processed CDC process further.
+
+
+Can you tell me about a time you had to deal with an irate customer or client?
+i am also a part of escalation team, we are multi tasker in our team, so sometime we go for escalation call, and meeting, where we have customer side, and from our side our account manager, and technical team, so as part of technicall team, i use to join those meeting, we use to discuss all pain and problem from the customer side. 
+
+personally i use to write all technicall point customer getting trouble, it could be usablity issue, or it could be genuine issue, or bug in the application or process customer observe.
+
+ 
+once customer explain everything and all pain, then i acknolege his all trouble point wise point, and then i start resolving, 
+step by step, if just usablity issue related to our application, we use to explain on same time, 
+some point need some analysis so we bear some time.
+and if issue is genuine issue, we raise it further in our organiztion, issue could be related to product or bug, etc.
+And we acknolge the issue, and we provid TAT for that issue.
+
+so here 99% percent customer got satisfied
+ 
+
+What about bandwidth for VoIP?
+signaling protocol SIP, H.323 or MGCP  - set up, disconnect and control the calls and telephony features
+
+Voice over IP (VoIP) is the descriptor for the technology used to carry digitised voice over an IP data network. VoIP requires two classes of protocols: a signaling protocol such as SIP, H.323 or MGCP that is used to set up, disconnect and control the calls and telephony features; and a protocol to carry speech packets.
+
+
+The Real-Time Transport Protocol (RTP) carries speech transmission. RTP is an IETF standard introduced in 1995 when H.323 was standardised. RTP will work with any signaling protocol. It is the commonly used protocol among IP PBX vendors.
+
+An IP phone or softphone generates a voice packet every 10, 20, 30 or 40ms, depending on the vendor's implementation.
+
+The 10 to 40ms of digitised speech can be uncompressed, compressed and even encrypted. This does not matter to the RTP protocol. As you have already figured out, it takes many packets to carry one word. 
+
+
+https://sites.google.com/a/ameyo.com/engineering/Home/generalknowledgebase/how-much-bandwidth-is-required-for-a-voip-call
+
+ SIP Debugging 
+
+    Terminology and Concepts
+
+The SIP (Session Initiation Protocol) is a text-based protocol, similar to the HTTP and SMTP, designed for initiating, maintaining, and terminating interactive communication sessions between users. Such sessions include voice, video, chat, interactive games, and virtual reality.
+
+    UAC (User agent client) – client in the terminal that initiates SIP signaling
+    UAS (User agent server) – server in the terminal that responds to the SIP signaling from the UAC
+    UA (User Agent) – SIP network terminal (SIP telephones, or gateway to other networks), contains UAC and UAS
+    Proxy server – receives connection requests from the UA and transfers them to another proxy server if the particular station is not in its administration
+    Redirect server – receives connection requests and sends them back to the requester including destination data instead of sending them to the calling party
+    Location Server – receives registration requests from the UA and updates the terminal database with them.
+
+
+
+
+CPP database skill media 1
+
+
+invented telphony - Alexander Graham bell - 7th-mar-1876
+25th-jan -1915 -AT&t - 5 day took -new york to san fancisco	
+1995 - 1st internet s/f phone by vocaltec
+2003 - skype creating n/w of people using VOIP
+2007 - iphone 1st smartphone
+
+Asterisk - open source s/w pbx
+works on popular linux distributions
+also available as a standalone linux distribution call AsteriskNow
+Support VOIP.
+
+Ameyo call manager based on Asterisk
+
+Asterisk Dialplans
+structured sequences of cmd that fired when a phone call is recived.
+dialplans can be used to invoke native asterisk cmd or even system cmd
+typically dialplan would play 'music-on-hold' while agent busy
+
+ACD(Automatic call distribution)
+asterisk will distribute calls based on pre-decided sequence b/w a queue of agents
+
+sequence can be First-come-1st-serve, round-robin or randome one.
+
+AMI
+asterisk managment interface.
+
+set of APIs that allow you to control asterisk server from remote location.
+
+ameyo application server control asterisk service using this AMI
+
+Asterisk Features
+IVR interactive voice response
+AMI -asterisk managment interfacce,
+ AGI - , 
+DIALPLANS, 
+VOICE, 
+CALL ROUTING, 
+ACD, 
+Automated attendant - voice kind of thing, 
+FAX  
+
+VOIP - voice over internet protocol - is communicatino protocol & transmission technique, whice delvr of voice communication or multimedia session over internet
+
+PST line - analoge line -exchange line- for signal transmission
+
+VOIP use below protocol for exchanging the signals and voice
+SIP - Session initiation protocol
+RTP - real time transport protocol
+SDP - session description protocol
+
+
+The SDP Protocol explained
+
+The SDP protocol can be split into three parts. The first part advertises the session details and is called “Session description”, the second part is called “Time description” which advertises timing details related to the session and the last part is called “Media description”, which advertises details about the media which will be streamed in an advertised session. Below is a list of the syntax used in the SDP protocol.
+
+Session Description
+
+    v= (protocol version)
+    o= (owner/creator and session identification).
+    s= (session name)
+    i= (session information)*
+    u= (URI of description)*
+    e=(email address – contact detail)*
+    p= (phone number – contact detail)*
+    c= (connection information – not required if included in media description)*
+    b= (session bandwidth information)*
+    z= (time zone adjustments)*
+    k= (encryption key)*
+    a= (zero or more session attribute lines)*
+
+Time description
+
+    t= (time the session is active)
+    r= (repeat times)*
+
+Media description
+
+    m= (media name/ transport address)
+    i= (media title)*
+    c= (connection information – not required if included in session description)*
+    b= (bandwidth information)*
+    k= (encryption key)*
+    a= (zero or more media attribute lines)*
+
+
+SIP -basic sip flow ........5060------------5060
+5060-xx.1.15 ------->invite,SDP(g711U,g711A,g729)-->1.14 inviting the provider with codec description 
+5060<---------100 trying-----
+5060<------------180 ringing--------
+5060<--------200 ok SDP (g711U, g711A,g729)--------
+5060-------------------ACK------------>
+5004<------------RTP(g711U)-----------   voice only
+5004---------RTP(g711U)------------>
+5060<---------bye----------------
+5060--------------200 ok---------->
+
+all sip message goes 5060
+RTP 5004 - its UDP kind of packet - we can define range of RTP port 10000-20000, 5000-10000,
+accrodingly it will establise connection
+
+
+Answers to SIP messages are in the digital format like in the http protocol. Here are the most important ones:
+
+    1XX – information messages (100 – trying, 180 – ringing, 183 – progress)
+    2XX – successful request completion (200 – OK)
+    3XX – call forwarding, the inquiry should be directed elsewhere (302 – temporarily moved, 305 – use proxy)
+    4XX – error (403 – forbidden)
+    5XX – server error (500 – Server Internal Error)
+    6XX – global failure
+
+
+SIP configuration Params
+1. Session-timers
+2. qualify
+3. externip
+4. NAT
+5. Localnet
+6. Registration timeout
+7. Jitter Buffer
+
+Session -timer --- refereshing endpoint session periodically 
+The SIP session timer is an extension of the SIP protocol that allows end-points and proxies to refresh a session periodically.
+session-timer=["accept","originate","refuse"]
+session-expires=[integer]
+session-minse=[integer]
+session-refresher=["uas","uac"]
+
+RTP (Real time protocol)
+Voice travels in form of RTP packets which are generally UDP type packets in nature.
+
+Qualify
+Asterisk will send a SIP Options cmd regularly to check that the device is still online.
+
+If the device does not answer within the configured (or default) period(in ms) Asterisk considers the device off-line for future calls.
+
+NAT
+if a peer is configured with nat=yes, it caused Asterisk to ignore the address information in the SIP and SDP headers from this peer, and reply to the sender's 
+IP address and port
+
+Ex:
+Softphone(Private) --(Private)NAT(Public)----(Public)Asterisk
+nat=yes is set for the entity in sip.conf
+Asterisk sees that nat=yes so it sends response on the basis of IP layer application layer.
+
+Jitter
+1. Packets are received with delay(obvious)
+2. Variation in this packet delay is said to cause jitter
+3. Jitter valuse is a complex formula that gives the effect of jitter in ms.
+4. Each packet depends on the previous packet arrival time for jitter calculation 
+
+Jitter Buffer
+A jitter buffer temporarily stores arriving packets in order to minimize delay variations.
+
+If packets arrive too late then they are discarded. A jitter buffer may be mis-configured and be either too large or too small
+
+PRI - Primary rate interface
+PRI is telecommunciation intferface standard primarily used in integrated services digital networks(ISDNs) and is basically a service provided for larger enterprise users. PRI lines are high-capacity service carried on T1 or E1 trunks lines, depending on the country, b/w  the telcommunications provider's central service station and the customers end.
+
+T1 have 24  channel
+E1 have 31 channel E1 are used in india
+
+PRI Card
+Digital telephony card series transports voice, as well as data, and makes voice and data integration easy.It is used to terminate E1 line and provide  SIP to server, Sangoma and digium are two wellknown vendors
+
+Media Gateway
+A media gateway is a translation device or service  that coverts media stream b/w  disparte telecommunications technolgies  such as POTS, SS7, Next generation networks (2G,2.5G, 3G radio access networks) or private branch exchange (PBX) systems. media gateways enable multimedia communications across packet networks using transport protocols such as Asynchronous transfer modem(ATM) and internet  protocol(ip)
+
+because the media gateway connects different types of networks, one of its main functions is to convert b/w different transmission and coding techniques. media streaming fuctions such as echo cancellation, DTMF, and tone sender are also located in the media gateway.
+Sangoma, Patton, Digium, Dinstare wellknown vendor.
+
+q1
+sangoma, patton, digium, dinstar
+gsm gateway is a big device with multiple slot togethor on 1 place and use for calling through mobile network, in gsm gateway, we will insert sim card for calling purpose, Gsm gateway is also flexiable, we can re-size according to our use, by inserting/removing sim cards. and its also cost effective.
+
+PRI is primary rate interface, its digital telephony card, it transfer voice and data both. its use ISDNs line.
+PRI line like E1 - 31 channel
+T1- 24 channel
+ 
+q2
+SIP- session initiation protocol is a signaling protocol that carry voice and multimedia like traffic also, 
+ISDNs - Integrated Services Digital Networks, its old type of circuit-switching network, PRI line works on ISDNs line.
+sip flow
+INVITE - SDP(G729,G711), we give codec information  - to provider
+TRYING - 100 trying - call trying from provider end
+RINGING - 180 ringing - call rings, it inform by provider end
+OK - 200 ok is acknowlege
+RTP - voice traffic transmitting b/w provider and you.
+BYE. - call finished by you or cx end.
+
+q3
+What is SIP/VOIP registration. Please explain the difference
+between IP bases and Username/password based SIP.
+sip Registration means  where the endpoint sends  request to SIP REGISTER(SIP SERVER) or VoIP provider to let it know where it is.
+Sip registeration authenticate method can be ip base or userid/password base 
+
+IP Based- does not authenticate with the SIP Trunk
+ID and Password - provide Authentication ID and Password to register and/or make outbound calls, as set in the SIP Trunk settings
+
+SIP URL- who are you in SIP, to locate an endpoint, exam:-
+4042265555@192.168.1.120
+4042265555@voipdomain.com
+
+SIP registration proces
+Endpoint		SIP server
+----------Register-------->
+<---------401 unauthorized---
+--------Register--------->
+<-------200 OK------------
+
+q4 
+its digital telephony card, that transport voice and data, its use on E1, and T1 line
+A PRI Card is used to connect PRI lines to IP PBX/ IP Telephony Server so that all the IP Phones/ Analog phones (extensions) can make outgoing calls or receive incoming calls using it. pri cards - sangoma, digium, 
+
+For it’s configuration, we have to download the latest package of dahdi/libpri/wanpipe.
+Then we have to install it.
+Then we have to upgrade the Kernel by update command.
+Then we have to start the services and our call server as well.
+And in the last we have to verify the working status of PRI
+
+
+q5
+coder-decoder or compression-decompression, its compress and decompress voice, digital data etc. its usefull because different codec consume different bandwidth, and provide different level of quality. so we choose codec according to our requirment.
+
+q6
+IP phones - is hard phone, that is we use for voip calling, 
+softphone - its a soft phone, that we use for voip calling in laptop, like zoiper, xlite.
+
+
+https://sites.google.com/a/ameyo.com/engineering/Home/sip-debugging
+
+https://sites.google.com/a/ameyo.com/engineering/Home/l3knowledgebase/analyzing-wanpipe-pri-log
+
+ VoIP packet capturing and Analyzing/SIP+RTP Analaysis 
+https://sites.google.com/a/ameyo.com/engineering/Home/l3knowledgebase/l3trainingarticles/voip-analysis-using-tshark
+
+
+For full call logs from wireshark
+
+nohup tcpdump -i any -Z root port 5060 or portrange 10000-20000 -s65535 -C 1000 -W 100 -w /dacx/debug/skilltesting.pcap &
+
+-vv verbose output:  tcpdump -vv
+You can specify the number of packets to be captured using the -c option
+tcpdump -c 10
+
+Use the -D option to print a list of all available network interfaces that tcpdump can collect packets from:
+tcpdump -D
+
+-i option followed by the interface name or the associated index. For example, to capture all packets from all interfaces
+
+tcpdump performs reverse DNS resolution on IP addresses and translates port numbers into names. Use the -n option to disable the translation:
+
+tcpdump -n -i any > file.out
+
+Understanding the tcpdump Output 
+[Timestamp] [Protocol] [Src IP].[Src Port] > [Dst IP].[Dst Port]: [Flags], [Seq], [Ack], [Win Size], [Options], [Data Length]
+
+tcpdump Filters #
+
+Filtering by Protocol
+
+To restrict the capture to a particular protocol, specify the protocol as a filter. For example, to capture only the UDP traffic, you would run:
+ tcpdump -n udp
+tcpdump -n proto 17		another way
+
+Filtering by Host #
+To capture only packets related to a specific host, use the host qualifier:
+sudo tcpdump -n host 192.168.1.185
+
+The host can be either an IP address or a name.
+
+You can also filter the output to a given IP range using the net qualifier. For example, to dump only packets related to 10.10.0.0/16 you would use:
+sudo tcpdump -n net 10.10
+
+Filtering by Port
+
+To limit capture only to packets from or to a specific port, use the port qualifier. The command below captures packets related to the SSH (port 22) service by using this command:
+
+sudo tcpdump -n port 23
+
+The portrange qualifier allows you to capture traffic in a range of ports:
+
+sudo tcpdump -n portrange 110-150
+
+
+Complex Filters #
+
+and (&&), or (||), and not (!) operators.
+sudo tcpdump -n src 192.168.1.185 and tcp port 80
+sudo tcpdump -n 'host 192.168.1.185 and (tcp port 80 or tcp port 443)'
+
+Reading and Writing Captures to a File
+
+Another useful feature of tcpdump is to write the packets to a file. This is handy when you are capturing a large number of packets or capturing packets for later analysis.
+
+To start writing to a file, use the -w option followed by the output capture file:
+
+This command above will save the capture to a file named data.pcap. You can name the file as you want, but it is a common convention to use the .pcap extension (packet capture).
+
+When the -w option is used, the output is not displayed on the screen. tcpdump writes raw packets and creates a binary file that cannot be read with a regular text editor.
+
+To inspect the contents of the file, invoke tcpdump with the -r option:
+
+sudo tcpdump -r data.pcap
+
+
+he capture file can also be inspected with other packet analyzer tools such as Wireshark.
+
+When capturing packets over a long period of time, you can enable file rotation. tcpdump allows you to create new files and rotate the dump file on a specified time interval or fixed size. The following command will create up to ten 200MB files, named file.pcap0, file.pcap1, and so on: before overwriting older files.
+
+sudo tcpdump -n -W 10 -C 200 -w /tmp/file.pcap
+
+If you want to start tcpdump at a specific time, you can use a cronjob . tcpdump doesn’t have an option to exit after a given time. You can use the timeout command to stop tcpdump after some time. For example, to exit after 5 minutes, you would use:
+
+sudo timeout 300 tcpdump -n -w data.pcap
+
+
+
+Twilio Flex
+
+..........................................
+https://scrolltest.com/2018/12/15/api-testing-tutorial/#more-1431
+
+what is REST API?
+Rest is acronym for Representational state transfer.
+The REST architectural style describes six constraints.
+These constraints, put on the architecture, 
+
+In simple terms REST API nothing but a design pattern for web API
+Uniform Interface - they should communicate with same resource like json, xml, html , txt)
+Stateless  - don’t worry about the state of the request or response..
+Cacheable  - api hit can cache or not?  implicitly or explicitly, define themselves as cacheable. It’s up to server when they want the cache to expired etc.
+Client-server - 
+Layered System -between client and server there can be any number of layered systems it does not matter.
+Code on Demand  - The server can store the Code or logic to themselves and transfer it whenever needed rather client-side logic.
+
+
+
+what is API?
+
+Type of API testing in API Testing?
+Functional testing
+Integration testing.  - UI + API
+Regression Testing - check working of old with new
+Security Testing  - Like pass security testing
+Load Testing  -  put load
+Penetration Testing - like mysql attack, brute force
+Fuzz testing - discover coding error 
+
+
+Http Request Components
+
+Resource URI - URL or endpoints
+Headers - Client to server -  contains few of header, these header could be like request you are sending data or not, json or not?, someother lang. or not?, length of the request
+Authorization  - on server end could be like api key, token
+Body - send a request, it goes with somedata, that data is kind of body, body could be like in json
+
+
+Http request structure cont.
+- Resource URI/ endpoint
+
+			Base URI 
+	host URI			Resource	Query Params
+https://example.com			users		?email=abc@gmail.com
+https://example.com/userapi/v1/users?email=abc@gmail.com
+
+https://example.com/userapi/v1/users/{resourceID}
+
+Host URI - https://example.com - it will google.com, facebook.com
+Base URI - https://example.com/userapi/v1/ - its containts starting point of the api, it will not change accrose all endpoints
+
+Resource - its need actually, - what element you reqesting actually, like profile detail, - its pool of data where you fetching something, or where you want to create an entry, like you want to fetch your all twitter messages, so messages is your resource
+
+Query Param - Where you filtering data, let say you are fetching your bank transaction, so you dont want to fetch all transaction, you just want to fetch only 1 querter transaction, so that is query params, filter could be single param, or multiple params, so query param are kind of filter
+
+Path Param -  example.com/userapi/v1/users/{resourceID}
+
+Scenrio - if you know the Resource Id of user, you can use Path Param, if you dont know, you can use Query Param
+
+URL - Uniform Resource Locator
+URN - Uniform Resource Name
+URI - Uniform Resource Identifier
+
+
+
+Arha
+8008441229
+
+
+Dear Customer,
+
+As discussed on 8008441229, you are installing VPN, if any issue you will update on the ticket.
+
+Regards
+Manjeet 
+
+
+MOSL Analysis || DCA20210618156751
+
+
+Dear Customer,
+
+As discussed with you, how many key you required, please share requirment, so we will create and update you.
+
+Regards
+Manjeet
+
+
+
+DCA20210617156652 System media hangup count 50% on Transfer calls
+
+Hi Mritunjay,
+
+Apology for the inconvinience.
+
+We working on the analysis from the backend. We will update you by EOD today once we identified the root cause.
+
+Regards,
+Rukunuddin Siddique
+
+
+
+DCA20210617156720  IVRS-Feedback Report Error
+
+DCA20210618156744 Delay on call response
+Hi Josphe,
+
+As discussed overcall, you are facing a delay in call response. The CRM page appears to be disconnected but on the mobile the call rings after that.
+
+This issue is mostly happening for agents who are logged in on the Web and not for mobile application users.
+it happening with who is the agent is log in with the system.
+we will check and update you.
+
+Regards,
+Sahdev Mandal
+
+
+DCA20210618156819 Same ticket is getting reopened
+
+DCA20210618156840 Calls are not getting forwarded properly
+Case Description:Calls are not getting forwarded from Campaign DID: 08035523175 to Ready Assist's campaign (08047185246)
+
+
+
+Pondal - 
+
+8106058189
+
+Dear Customer,
+
+As discussed with you, we have shared the key, and also provided the VPN training also how to install vpn key and connect.
+
+Regards
+Manjeet
+
+hariprasad@openworld
+joshi@openworld
+mahender@openworld
+sangeetha@openworld
+suryam@openworld
+swapna@openworld
+insuranceinb8@yahoo.com
+insuranceinb7@yahoo.com
+
+
+Dear Rajendra,
+
+As discussed with you, we have provided you VPN key, and given demo how to connect VPN key.
+
+Regards
+Manjeet
+
+Dear Shaikh,
+
+As discuss with you, please share the sample number with timestamp, so we will see if call receive in ameyo or not?, and we will share hour analysis.
+
+Regards
+Manjeet
+
+
+Dear Hima,
+
+As discussed with you, there some invaild number callback scheduled, so we have deleted now, these number will not dial again.
+
+Regards
+Manjeet
+
+
+9501191026
+
+
+DCA20210617156607
+
+
+Dear 
+
+
+
+Test Call Data - MK
+Call Disconnecting On TATA Mumbai || 02268059000
+External
+
+Dear Sharon,
+
+We have checked for given sample number, so we checked for given sample number time is not matching we receie call on different timestamp, and few call receive on approx time given below where some places no input receive, and on 2 calls receive input that is 3 only, 
+
+And for 1 number we dont receive any call in last 3-4 days like 9717072870.
+
+
+       date_added        |   phone    | call_result |    hangup_details     | customer_input 
+-------------------------+------------+-------------+-----------------------+----------------
+ 2021-06-19 11:48:46.288 | 9953810330 | FAILURE     | CUSTOMER_HANGUP_PHONE | G=,3
+ 2021-06-17 11:37:55.828 | 9953810330 | FAILURE     | CUSTOMER_HANGUP_PHONE | G=,3
+ 2021-06-17 11:32:42.6   | 9953810330 | FAILURE     | CUSTOMER_HANGUP_PHONE | 
+(3 rows)
+
+
+       date_added        |   phone    | call_result |    hangup_details     | customer_input 
+-------------------------+------------+-------------+-----------------------+----------------
+ 2021-06-18 12:03:39.541 | 9815971201 | FAILURE     | CUSTOMER_HANGUP_PHONE | 
+ 2021-06-18 09:34:42.921 | 9815971201 | FAILURE     | CUSTOMER_HANGUP_PHONE | 
+ 2021-06-17 10:18:53.136 | 9815971201 | FAILURE     | CUSTOMER_HANGUP_PHONE | 
+
+
+       date_added        |   phone    | call_result |    hangup_details     |       customer_input       
+-------------------------+------------+-------------+-----------------------+----------------------------
+ 2021-06-17 11:14:46.571 | 7877998899 | SUCCESS     | AGENT_HANGUP_PHONE    | G=,3;G=,*;G=,1;G=:NIR;G=,9
+ 2021-06-16 18:09:22.296 | 7877998899 | FAILURE     | CUSTOMER_HANGUP_PHONE | 
+(2 rows)
+
+Proficient with testing REST APIs.
+
+
+create project
+
+in src create package
+
+project and package name should be same
+
+in package create class 
+
+package javaTutorial;
+
+public static void(String[] args) {
+// 1000 Auto-generated method stub
+	System.out.println();
+   }
+}
+
+void - not returning anything, 
+static means non object class - we cant create object of this class
+
+
+
+/var/www/html/Modules/WhatsappApi/Lib
+whatsappapi.php
+
+php artisan cache:clear
+
+
+
+One of condition should be true, return type should be different or parameter should be different. like given below
+
+define char array
+
+char[] = new char[5];
+
+
+Scanner class is java.util so to invoke it we need to import java.util.Scanner;
+
+A consrtuctor spacial type of method, its name depend on class name
+
+when creating object, at the time we are creating object we want to initilize all instance at same time we can use constructor.
+
+
+public class Car extends Vehicle
+Means Car is child and Vehicle is parent so child class is inherting properties of parent Vehicle class
+
+Now if we create object of child class, we can invoke parent class method and as well as child class
+
+
+
+kubernetes
+ctrl+p
+ctrl+q to come outside from container and container will be in running state
+
+
+docker run -it --name c1 centos /bin/bash
+
+docker ps
+
+docker ps -a 
+
+docker container run -it --name c1 centos /bin/bash
+
+
+GCP (GKE)
+
+AWS (EKS)
+
+Azure (AKS)
+
+Minikube(1 Node)
+
+3 (Node kubernetes cluster)
+
+
+kubectl get nodes
+
+kubectl get nodes -o wide
+
+kubectl get pods
+
+kubectl get pods -o wide
+
+kubectl describe pods/OS/webserver
+
+kubectl describe pods/OS/webserver | tail
+
+kubectl create -f create-pod-with-os.yaml
+
+kubectl exec -it webserver sh		it will take 1st container of the POD
+
+kubectl exec -it -c web webserver sh	it will take name os1 container of OS pod
+
+kubectl exec -it -c web webserver -- sh
+
+kubectl delete -f file.yaml	
+
+kubectl exec -it webserver sh
+
+kubectl delete pod/browser
+
+create a pod with image
+
+kubectl run webserver --image=nginx:alpine --restart=Never			it will create the pod and image in it
+
+kubectl run curl --rm --restart=Never --image=vipin2411/curl -it --sh		it will create the pod and enter in interactive mode
+
+
+Kubernetes ReplicaSets
+creating pods at scale
+when need to create pods on large scale 
+if said replica set need to keep 3 pod running that is replica set responsiblity
+
+
+pod yaml
+
+apiVersion:v1			API Version 
+kind: Pod			kind of resource, pod,deployment service
+metadata:			metadata about resource
+	name: OS		pod name
+spec:				describes desired behavior of resource
+	containers:
+	-name: OS		container name
+	image: centos		imange name in container
+
+
+
+apiVersion:v1			
+kind: Pod			
+metadata:			
+	name: OS		
+spec:				
+	containers:
+	-name: OS		
+	image: centos		
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: os
+spec:
+  containers:
+  - name: os
+    image: centos
+
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+        name: browser
+spec:
+     containers:
+             - name: curl
+               image: vipin2411/curl
+               imagePullPolicy: IfNotPresent
+               command: ['sh','-c','echo Pod running;sleep 7200']
+
+
+pod with port
+
+apiVersion: v1
+kind: Pod
+metadata:
+ name: webserver
+ labels:
+  app: nginxweb
+spec:
+ containers:
+ - name: web
+   image: nginx:1.16-alpine
+   ports:
+   - containerPort: 80
+
+
+Pod to pod comm
+create 2 pod curl, webserver
+from curl pod access webserver by elink browser
+
+
+Node to pod comm
+
+enter in node
+ gcloud compute ssh --zone us-central1-c gke-mycluster-default-pool-fa26e0c8-l2wd --project  apt-tracker-315210
+
+create a pod with port on that is on different node or its just a pod
+
+after entering in another node, curl http://pod_ip
+
+
+multi container pod
+
+apiVersion: v1
+kind: Pod
+metadata:
+ name: webserver
+ labels:
+ app: nginxweb
+ type: production
+ ver:v1
+spec:
+ containers:
+ - name: web
+   image: nginx:1.16-alpine
+ - name: curl
+   image: vipin2411/curl
+   command: ["/bin/bash","-c","while:;do curl http://localhost:80/;sleep 15;done"]
+
+after creating pod by yaml
+
+how to check logs
+kubectl logs -c curl pod/webserver | less
+
+now enter in curl pod and try to access webpage on port 80
+
+Kubernetes ReplicaSets
+creating pods at scale
+
+pod using replicaset
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+ name: webserver-rs
+spec:
+ replicas: 3
+ selector:
+  matchLabels:
+   app: nginxweb
+ template:
+  metadata:
+   labels:
+    app: nginxweb
+    env: development
+  spec:
+   containers:
+    name: web
+    image: nginx:1.16-alpine
+
+cat pod-using-replicaset.yaml
+
+kubectl create -f pod-using-replicaset.yaml
+
+
+kubectl get rs
+
+kubectl get pods -o wide
+
+
+kubectl get pods --show-labels
+
+
+ReplicaSet command line
+
+kubectl scale rs webserver-rs --replicas=6		scale the num of pod - 6
+
+kubectl delete rs webserver-rs --cascade=false		want to delete replicaset, but want pods keep running
+
+kubectl create -f pod-using-replicaset.yaml		it will control all mention replicaset in yaml, as selector
+
+kubectl delete rs webserver-rs --cascade=true		when delete replicaset and pods both
+
+
+Deployment
+
+its high level object then replicaset, when need to change version etc, after 1st app deplyment, we need to further update app again.
+
+pod-using-deployment
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: webserver-d
+ spec:
+  selector:
+   matchLabels:
+    app: nginxweb
+   replicas: 3
+   template:
+    metadata:
+     labels:
+      app: nginxweb
+    spec:
+      containers:
+      - name: web
+        image: nginx:1.16-alpine
+        ports:
+        - containerPort: 80
+
+Deployment Commands
+
+cat pod-using-deployment.yaml			
+
+kubectl create -f pod-using-deplyment.yaml
+	
+kubectl get deployment/webserver-d			get info. about webserver-d 3 out 3 available?
+
+kubectl get rs						when create deply one rs object auto get create manage pods
+
+kubectl get rc						get info about any replication control (rc) no rc avai the rc was used earlier manage pods
+
+kubectl get deploy
+
+kubectl get pods -o wide
+
+kubectl describe deploy
+
+kubectl describe deploy/webserver-d
+
+
+
+scalling in deploy
+
+vi pod-using-deploy.yaml
+
+kubectl apply -f pod-using-deploy.yaml
+
+kubectl get deploy 
+
+kubectl delete -f pod-using-deploy.yaml
+
+kubectl get deploy
+
+kubectl scale deployment webserver-d --replicas=6
+
+kubectl get deploy,rs
+
+
+kubernetes Deployment Strategy - rolling update, cannery, blue green, fixed etc
+
+
+webserver-rolling-update.yaml
+
+apiVersion: apps/v1
+kind: Deployment	
+metadata: webserver
+spec:
+ minReadySeconds: 10			min num of sec pod should be in healthy state
+ progressDeadlineSeconds:300		max num of sec deplmnt progress can take before consider failed
+ revisionHistoryLimit: 3		max revisions to be maintained at revision history 
+ replica: 3				
+ selector:	
+  matchLabels:				type of selector to use match label or match expr.
+   app: nginxweb			pod matching this label will be handled by this replicaset
+  strategy:				strategy to use for replacing old pods with new ones
+   rollingUpdate:	
+    maxSurge: 1				max pods above desired pods
+    maxUnavailable: 1			max pods that can remain unavailable during update
+   type: RollingUpdate			type of strategy
+  template:				pod template/configuration
+   metadate:				metadata about pod
+    labels:
+     apps: nginxweb			pod label
+     type: production			pod label
+     ver: v1
+   spec:				describe desire behaviour of pod
+    containers:				
+    - image: vipin2411/nginx-alpine:v1	image of container
+      name: web				container name
+    ports:				
+    - containerPort: 80			container port
+      protocol: TCP			
+    readinessProbe:			kind of probe to check when the app is ready to receive traffic
+    httpGet:				type of probe
+     path: /				path to ping http response 200-300 considered success
+     port: 80				port to ping
+    initialDelaySeconds: 30 		time to wait before sending probes
+    timeoutSeconds: 10			time after which probe will timeout	
+    periodSeconds: 5			time interval b/w probes
+    successThreshold: 1			min continous successful probes required for making pod ready
+    failureThreshold: 2			num of continous failed probe needed to mark pod as unready
+  restartPolicy: Arrays			container will get restarted if got terminatedgclo
+
+
+
+If we want to service come from internet, need to use service object
+trafic forward to pod  cluster ip, node port, loadbalancer?
+
+rolling-update-service.yaml
+
+apiVersion: v1		API version
+kind: Service		kind of resource	
+metadata:		metadata about service
+name: web-ru		service name
+spec:			describe desired behaviour of service
+ selector:		type of selector to use	
+  app: nginxweb		pod matching this label
+ ports:			
+ - protocol: TCP	proto. 
+   port: 80		port exposed by service inside cluster
+   targetPort: 80	port exposed by pods selected by service
+ type: LoadBalancer	type of service
+
+
+service Type "LoadBalancer"
+
+cat rolling-update-service.yaml
+
+kubectl apply -f rolling-update-service.yaml	create service web-ru of LoadBalancer type from yaml file
+
+kubectl get svc/web-ru			initially the external-ip is in pendng state bcz creating LB taks time, again chk aftsome time 1 real ip shown
+
+kubectl describe svc/web-ru			give usefull info regarding service obj.
+
+
+kubectl rollout status deployment webserver	if any rollout is happing, it will show the status
+
+kubectl rollout history deployment webserver	it show Revision history
+
+
+Rollback
+
+kubectl rollout status deployment webserver				gives rollout history
+						
+kubectl rollout history deployment webserver				shows rolling update history
+			
+kubectl rollout undo deployment/webserver				rollback to previous
+	
+kubectl rollout undo deployment/webserver --to-revision=1		rollback to v1
+
+For sometime both v2 and v1 will be available. After successful rollback, only v1
+
+
+Kubernetes Services
+ClusterIP, NodePort, LoadBalancer - sending traffice to pods
+
+ClusterIP, - A virtual private internal IP address is allocated to service. This IP can be used only within the cluster. Pods and nodes in cluster can access can access this IP address. If we are not going to specify service type during object creation time, default ClusterIP is chosen. The external clients can not access the service IP.
+
+NodePort: A port is dynamically allocated from port range 30000-32768 to each node of the cluster and any one can access pods using these nodesip:nodeport combination. NodePort itself behind the scenes uses ClusterIP to send the traffic to pods. when we send the request to nodeip:nodeport, it is forwarded to clusterip:serviceport and finally forwarded to podip:targetport combination. The problem with NodePort is that if there are 3 node in cluster we may have to use 3 combinations of nodeip:nodeport, which is again difficult.
+
+LoadBalancer: By default, no load balancer is available internally in Kubernetes. We have to use external Load balancer (LB) from cloud providers such as AWS, GCP or Azure. LB behind the scene creates NodePort service and just load balancer the Traffic to nodeip:nodeport combinations.
+
+
+Kubernete ClusterIP
+
+cat pod-service-cip.yaml
+apiVersion: v1
+kind: Service
+metadata:
+ name: web-cip
+spec: 
+ selector:
+  app: nginxweb
+ ports:
+ - protocol: TCP
+   port: 80
+ type: ClusterIP
+
+
+kubectl apply -f pod-service-cip.yaml
+
+kubectl get svc				service object
+
+kubectl get svc/web-cip
+
+kubectl describe svc/web-cip
+
+1st run a pod
+kubectl create -f pod-with-port.yaml
+
+then run pod-service-cip.yaml
+
+after that check endpoint and try to check if you are able to login, but you cant becz its cluster ip within cluster
+
+then try to access from another node by login on another node, and you are able to do this
+
+
+Node Port 
+
+pod-service-np.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+ name: web-np
+spec:
+ selector:
+  app: nginxweb
+ ports:
+ - protocol: TCP
+   port: 80
+ type: NodePort
+
+NodePort service commands
+
+cat pod-service-np.yaml		service web-np, nodeport, selector is label "app=nginxweb" select "webserver" pod that already runng, & label "app=nginxweb"
+
+kubectl apply -f pod-service-np.yaml 		create service obj. when we create nodeport type of service, on each cluster node one port get allocated dynamically from port range 30000-32768. now external clients can connect by using combination nodeip:nodeport
+
+kubectl get svc/web-np		nodeport is allocated. also note that "ClusterIP" was created behind the scene having virtual IP and service port 80 
+
+In the end delete the service "web-np"
+
+kubectl get svc/web-np
+
+kubectl get svc/web-np -o wide
+
+kubectl describe svc/web-np
+
+gcloud compute firewall-rules create rule-up --allow tcp:31765 --project  apt-tracker-315210
+
+
+1st create pod with port, then run pod-service-np and after that open firewall for nodeport, and after that check on browser with node ip with port number, its accessable on all ip with same port.
+
+also go to another node and access with curl with cluster ip 
+
+
+NodePort fixed port
+
+apiVersion: v1
+kind: Service
+metadata:
+ name: web-np-fp
+spec:
+ selector:
+  app: nginxweb
+ ports:
+ - protocol: TCP
+   port: 80
+   targetPort: 80
+   nodePort: 31080
+ type: NodePort
+
+pod-service-np-fixedport.yaml
+
+cat pod-service-np-fixedpoint.yaml
+
+kubectl apply -f pod-service-np-fixedport.yaml
+
+kubectl get svc/web-np-fp
+
+kubectl get ep/web-np-fp		endpoint
+
+
+1st create pod with port, then run pod-service-np-fixedport and after that open firewall for nodeport that is fixed, and after that check on browser with node ip with fixed port number, its accessable on all node ip with same port.
+
+also go to another node and access with curl with cluster ip 
+
+
+Pod used for load balancer
+
+webserver-pod-v1.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+ name: webserver-v1
+ labels:
+  app: nginxweb
+  type: production
+  ver: v1
+ spec:
+  containers:
+  - name: web
+    image: vipin2411/nginx-alpine:v1
+    ports:
+    - containerPort: 80
+
+webserver-pod-v2.yaml
+
+apiVersion: v1
+kind: Pod
+metadata: 
+ name: webserver-v2
+ labels:
+  app: nginxweb
+  type: production
+  ver: v2
+ spec:
+  containers:
+  - name: web
+    image: vipin2411/nginx-alpine:v2
+    ports:
+    - containerPort: 80
+
+webserver-pod-v3.yaml
+
+apiVersion: v1
+kind: Pod
+metadata: 
+ name: webserver-v3
+ labels:
+  app: nginxweb
+  type: production
+  ver: v3
+ spec:
+  containers:
+  - name: web
+    image: vipin2411/nginx-alpine:v3
+    ports:
+    - containerPort: 80
+
+cmd
+
+cat webserver-pod-v1.yaml
+cat webserver-pod-v2.yaml
+cat webserver-pod-v3.yaml
+
+kubectl apply -f webserver-pod-v1.yaml
+kubectl apply -f webserver-pod-v2.yaml
+kubectl apply -f webserver-pod-v3.yaml
+
+kubectl get pods -o wide
+kubectl get pods --show-labels
+
+
+pod-service-lb.yaml
+apiVersion: v1
+kind: Service
+metadata: 
+ name: web-lb
+spec:
+ selector:
+  app: nginxweb
+ ports:
+  protocol: TCP
+  port: 80
+ type: LoadBalancer
+
+run 3 pod with different version 1,2,3, run loadbalancer service, and check now loadbalancer ip
+
+kubectl get svc/web-lb
+
+ 
+Practice Kubernetes
+
+How many PODs exist on the system? (in the current(defaul) namespace) - on master node?
+
+Sol check on master node, - kubectl get pds? - zero
+
+Create 	a new pod with the NGINX image? imange name:nginx
+
+Sol, we can create pod defination file or run cmd
+
+kubectl run nginx --image:nginx
+
+How many pods are created now? Note: we have created a few more pods. so please check again.
+
+Sol kubectl get pods
+
+Wht is the image used to create the new pods? you  must look at one of the new pods in detail to figure this out.
+
+Sol. kubectl describe pod newpods-xxxx
+
+Which nodes are these pods placed on? you must look at all the pods in detail to figure this out
+
+SOl. kubectl get pods -o wide
+
+How many containers are part of the pod 'webapp'? Note: we just created a new POD.
+
+SOl. kubectl get pods 	get pods 1/2  then check with describe
+     kubectl describe pod webapp
+     check under container section
+
+what images are used in the new 'webapp' pod? you must look at all the pods in detail to figure this out?
+
+ SOl. kubectl describe pod webapp
+      check under container section you will see images name
+
+What is the state of the container 'agentx' in the pod webapp? wait for it to finish the 'ContainCreating' state
+
+Sol. kubectl describe pod webapp
+      check under container section you will see images name agentx and then check state
+
+Why do you think the container 'agentx' in pod 'webapp' is in error? try to figure it out from the events section of the pod
+
+Sol kubectl describe pod webapp
+      check under container section you will see images name and state also, and below state there is reason also
+      if reason is not clear then check events in describe
+
+What does the READY column in the output of the 'kubectl get pods' cmd  indicate?
+
+Sol its show total and running pods
+
+
+Delete the webapp Pod. once deleted wait for the pod fully terminate.
+
+Sol kubectl delete pod webapp
+
+Create a new pod with the name 'redis' and with the image 'redis123' use a pod-defination YAML file. And yes the image name is wrong
+
+vi redis-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis
+spec:
+  containers:
+  - name: redis
+    image: redis123
+
+kubectl create -f redis-pod.yaml
+
+Now fix the image on the pod to 'redis'. update the pod-definition file and use 'kubectl apply' cmd or use 'kubectl edit pod redis' cmd
+
+Sol kubectl edit pod redis
+search for image and change it
+
+
+How many ReplicaSets exist on the system?
+
+SOl. kubectl get replicasets
+
+How many Pods are desired in the new-replica-set?
+
+SOl. kubectl get replicasets  check desired column
+
+what is the images used to create the pods in the new-replica-set?
+
+Sol. kubectl describe replicaset	check under container image mentioned
+
+How many Pods are Ready in the new-replica-set?
+
+SOl. kubectl get replicasets  		check ready column
+
+why do you think the Pods are not ready?
+
+Sol  kubectl describe replicaset	check replicas current/desired just below Pod status running/waiting/Success/failed, then check event 4 port created or not?
+
+check again status 
+kubectl get pods 			if status like imagepullbackoff. not sure about this, dig in for 1 pod
+
+kubectl describe pod new-replica-set-xxxx 	and check the event of this pod, you will get the error reason
+
+Delete one from 4 pods?
+
+Sol.kubectl delete pod new-replica-set-xxx
+
+
+try to create a replicaset-defination from yaml file. and you got below error?
+
+kubectl create -f replicaset-defination.yaml 
+error: unable to recognize "replicaset-definition.yaml" no matches for kind "ReplicaSet" in version "v1"
+
+SOl. ReplicaSet is part of apps/v1 not v1, go to documentation and search with ReplicaSet 
+
+try to create a replicaset-defination from 2nd yaml file. and you got below error?
+
+kubectl create -f replicaset-defination-2.yaml 
+The ReplicaSet "replicaset-2" is invalid: spec.template.metadata.labels: Invalid value: map[string]string{"tier":"nginx"}: 'selector' does not match template 'labels'
+
+Sol check 2nd yaml file found selector label tier doesnt match to template tier label
+
+delete replicaset
+
+kubectl delete rs replicaset-1 replicaset-2
+
+Fix the original replica set 'new-replica-set' to use the correct 'busybox' image (Either delete and re-create/update delete all etc?)
+
+Sol kubectl edit rs new-replica-set		search for image there you  see busybox777, correct it to busybox
+check again
+
+kubectl get pods		still you see its in same state, so here you have 2 option
+
+option
+1st delete each pod it will create new pod automatically 
+2nd delete replica set, and create a new replica set
+
+scale the ReplicaSet to 5 PODs
+use kubectl scale command or edit the replicaset using "kubectl edit"
+
+Sol. kubectl scale rs new-replica-set --replicas=5
+
+Now scale the replicaset down 2 Pods
+
+sol. kubectl scale rs new-replica-set --replicas=2
+
+
+
+Replication Controller
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myapp-rc
+spec:
+  replicas: 3
+  selector:
+    app: nginx
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+
+
+Labels and selectors
+
+metadata:			label that create criteria
+ name: myapp-pod
+ labels:
+  tier: front-end
+
+
+selector:			from which we can select labels define when creating the pod
+ matchLabels:
+  tier: front-end
+
+
+Namespaces
+Pods 
+services
+Deployment  
+
+that we are doing inside a namspace, we are doing inside a house, this is known as default namespace, and its create automattically when kubernetes setup 1st time
+
+
+kube-system
+kube-system is the namespace for objects created by the Kubernetes system.
+Typically, this would contain pods like kube-dns, kube-proxy, kubernetes-dashboard and stuff like fluentd, heapster, ingresses and so on.
+
+
+default The default namespace for objects with no other namespace
+web-pod, db-server, web-deployment   mysql.connect("db-service")
+access in another namespace, mysql.connect("db-service.dev.svc.cluster.local")	this DNS entry added automat when its created
+cluster.local 	domain
+svc		service
+dev		namspace
+db-service	service-name
+
+kube-system The namespace for objects created by the Kubernetes system
+
+kube-public This namespace is created automatically and is readable by all users (including those not authenticated). This namespace is mostly reserved for cluster usage, in case that some resources should be visible and readable publicly throughout the whole cluster. The public aspect of this namespace is only a convention, not a requirement.
+
+kube-node-lease This namespace for the lease objects associated with each node which improves the performance of the node heartbeats as the cluster scales
+
+Namespace Resoure Limits
+
+
+create & view pod in namespae
+
+kubectl get pods 			it will list all pods within in same namspace
+kubectl get pods --namespace=kube-syst		list kube-system name space pods
+	
+
+kubectl create -f pod-defination.yaml			create pod in default or same namespace
+kubectl create -f pod-defination.yaml -namespace=dev	create pod in dev namespace, or add namespace in metadata 
+
+
+how you create namespace
+namespace-dev.yml
+
+apiVersion: v1
+kind: Namespace
+metadata:
+ name: dev
+
+kubectl create namespace dev	
+
+switch into another namespace
+kubectl config set-context $(kubectl config current-context) --namespace=dev
+kubectl get pods --all-namespaces
+
