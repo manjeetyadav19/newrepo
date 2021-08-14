@@ -61,7 +61,6 @@
         az: "{{ zone1 }}"
         state: "{{state}}"
         cidr: "{{ PrivSub1Cidr }}"
-        map_public: yes
         resource_tags:
             Name: vprofile-prisub1
       register: prisub1_out
@@ -73,7 +72,6 @@
         az: "{{ zone2 }}"
         state: "{{state}}"
         cidr: "{{ PrivSub2Cidr }}"
-        map_public: yes
         resource_tags:
             Name: vprofile-prisub2
       register: prisub2_out
@@ -85,7 +83,16 @@
         az: "{{ zone3 }}"
         state: "{{state}}"
         cidr: "{{ PrivSub3Cidr }}"
-        map_public: yes
         resource_tags:
             Name: vprofile-prisub3
       register: prisub3_out
+
+    - name: Internet Gateway Setup
+      ec2_vpc_igw:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{ region }}"
+        state: "{{state}}"
+        resource_tags:
+            Name: vprofile-prisub3
+      register: vprofile_IGW
+
