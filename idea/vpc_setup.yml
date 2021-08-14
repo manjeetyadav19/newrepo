@@ -93,6 +93,6 @@
         region: "{{ region }}"
         state: "{{state}}"
         resource_tags:
-            Name: vprofile-prisub3
-      register: vprofile_IGW
+            Name: vprofile-IGW
+      register: igw_out
 
