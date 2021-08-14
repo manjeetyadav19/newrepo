@@ -3,7 +3,10 @@
   gather_facts: False
   tasks:
     - name: Import VPC Varibles
-      include_vars: ~/vars/vpc_setup
+      include_vars:
+        dir: idea/vars/all
+        extensions:
+          - 'txt'
 
     - name: Create Vprofile VPC
       ec2_vpc_net:
