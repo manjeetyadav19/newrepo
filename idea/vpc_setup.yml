@@ -88,7 +88,7 @@
       register: prisub3_out
 
     - name: Internet Gateway Setup
-      ec2_vpc_nat_gateway:
+      ec2_vpc_igw:
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{ region }}"
         state: "{{state}}"
